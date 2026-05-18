@@ -335,7 +335,7 @@
         
         /* Services Section — стеклянные карточки */
         .services {
-            padding: 100px 0;
+            padding: 100px 0 40px;
             background: transparent;
         }
         
@@ -453,7 +453,7 @@
         
         /* About Section */
         .about {
-            padding: 100px 0;
+            padding: 40px 0 100px;
             background: transparent;
         }
         
@@ -465,6 +465,12 @@
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
+        }
+
+        .about-visual {
+            margin: 0 auto;
+            max-width: 400px;
+            width: 100%;
         }
         
         .about-visual {
@@ -942,6 +948,17 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--white);
+            z-index: 1001;
+        }
+
+        .mobile-only {
+            display: none;
+        }
+
+        .mobile-phone-link {
+            color: var(--sky-blue) !important;
+            font-size: 1.1rem !important;
+            font-weight: 700;
         }
         
         /* ========== MOBILE ADAPTATION ========== */
@@ -1062,7 +1079,29 @@
             
             /* Services mobile */
             .services-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+
+            .service-card {
+                padding: 20px 15px;
+            }
+
+            .service-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+
+            .service-title {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+
+            .service-desc {
+                font-size: 0.8rem;
+                line-height: 1.5;
             }
             
             .section-title {
@@ -1083,6 +1122,19 @@
             
             .about-content h2 {
                 font-size: 2.2rem;
+                text-align: center;
+            }
+
+            .about-content p {
+                text-align: center;
+            }
+
+            .about-features {
+                justify-items: center;
+            }
+
+            .about-feature {
+                justify-content: center;
             }
             
             .about-features {
@@ -1231,7 +1283,7 @@
 
         .strip-item {
             flex: 0 0 auto;
-            width: 320px;
+            width: 360px;
             scroll-snap-align: start;
             border-radius: 16px;
             overflow: hidden;
@@ -1291,11 +1343,11 @@
 
         @media (max-width: 768px) {
             .strip-item {
-                width: 260px;
+                width: 300px;
             }
 
             .strip-item img {
-                height: 195px;
+                height: 225px;
             }
 
             .strip-btn {
@@ -1307,11 +1359,11 @@
 
         @media (max-width: 480px) {
             .strip-item {
-                width: 220px;
+                width: 280px;
             }
 
             .strip-item img {
-                height: 165px;
+                height: 210px;
             }
 
             .photo-strip-container {
@@ -1610,6 +1662,70 @@
             opacity: 1;
             transform: rotate(0) scale(1);
         }
+
+        /* ===== FLOATING CALL BUTTON ===== */
+        .floating-call-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--blue), var(--sky-blue));
+            color: white;
+            padding: 14px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s;
+            z-index: 1000;
+            animation: floatPulse 2s infinite;
+        }
+
+        .floating-call-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
+        }
+
+        .floating-call-btn i {
+            font-size: 1.2rem;
+            animation: phoneShake 1.5s infinite;
+        }
+
+        @keyframes floatPulse {
+            0%, 100% { box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4); }
+            50% { box-shadow: 0 10px 40px rgba(59, 130, 246, 0.6); }
+        }
+
+        @keyframes phoneShake {
+            0%, 100% { transform: rotate(0); }
+            10% { transform: rotate(-10deg); }
+            20% { transform: rotate(10deg); }
+            30% { transform: rotate(-5deg); }
+            40% { transform: rotate(5deg); }
+            50% { transform: rotate(0); }
+        }
+
+        @media (max-width: 768px) {
+            .floating-call-btn {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+
+            .floating-call-btn span {
+                display: none;
+            }
+
+            .floating-call-btn i {
+                font-size: 1.4rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1632,18 +1748,19 @@
                     <span class="logo-sub">Пермский Профессиональный Подход</span>
                 </div>
             </a>
-            <ul class="nav-links">
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#about">О компании</a></li>
-                <li><a href="#projects">Проекты</a></li>
-                <li><a href="#process">Этапы работ</a></li>
-                <li><a href="#contacts">Контакты</a></li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services" onclick="closeMobileMenu()">Услуги</a></li>
+                <li><a href="#about" onclick="closeMobileMenu()">О компании</a></li>
+                <li><a href="#projects" onclick="closeMobileMenu()">Проекты</a></li>
+                <li><a href="#process" onclick="closeMobileMenu()">Этапы работ</a></li>
+                <li><a href="#contacts" onclick="closeMobileMenu()">Контакты</a></li>
+                <li class="mobile-only"><a href="tel:+79082701848" class="mobile-phone-link"><i class="fas fa-phone"></i> +7 (908) 270-18-48</a></li>
             </ul>
             <a href="tel:+79082701848" class="phone-btn">
                 <i class="fas fa-phone" style="margin-right: 8px;"></i>+7 (908) 270-18-48
             </a>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" id="mobileMenuBtn">
+                <i class="fas fa-bars" id="menuIcon"></i>
             </button>
         </div>
     </nav>
@@ -1652,7 +1769,7 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content animate-on-scroll">
-                <h1>Промышленные бетонные полы <span>в Перми</span></h1>
+                <h1>Промышленные бетонные полы<br><span>в Перми</span></h1>
                 <p class="hero-subtitle">Устройство бетонных полов любой сложности для складов, производств, ангаров и торговых центров. А также придомовые территории.</p>
                 <div class="hero-features">
                     <div class="hero-feature">
@@ -1989,6 +2106,12 @@
         </div>
     </section>
 
+    <!-- Floating Call Button -->
+    <a href="tel:+79082701848" class="floating-call-btn">
+        <i class="fas fa-phone"></i>
+        <span>Позвонить</span>
+    </a>
+
     <!-- Footer -->
     <footer>
         <div class="footer-container">
@@ -2049,7 +2172,7 @@
         // Photo Strip Scroll
         function scrollStrip(direction) {
             const strip = document.getElementById('photoStrip');
-            const scrollAmount = 340; // item width + gap
+            const scrollAmount = 380; // item width + gap
             strip.scrollBy({
                 left: direction * scrollAmount,
                 behavior: 'smooth'

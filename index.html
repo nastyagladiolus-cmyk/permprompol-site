@@ -2950,7 +2950,98 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta" id="contacts">
+        <!-- Cost Calculator Section -->
+    <section class="calculator" id="calculator">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">Калькулятор</span>
+            <h2 class="section-title">Рассчитайте стоимость онлайн</h2>
+            <p class="section-desc">Получите предварительную оценку стоимости работ за 1 минуту. Точный расчёт после выезда инженера.</p>
+        </div>
+        <div class="calculator-container animate-on-scroll">
+            <div class="calc-form">
+                <div class="calc-row">
+                    <div class="calc-group">
+                        <label for="calc-area">Площадь, м²</label>
+                        <input type="number" id="calc-area" placeholder="Например: 150" min="1" max="10000">
+                    </div>
+                    <div class="calc-group">
+                        <label for="calc-type">Тип покрытия</label>
+                        <select id="calc-type">
+                            <option value="">Выберите тип</option>
+                            <option value="industrial">Промышленный бетонный пол</option>
+                            <option value="warehouse">Складской пол с топпингом</option>
+                            <option value="polymer">Полимерное покрытие</option>
+                            <option value="stamped">Печатный бетон</option>
+                            <option value="polished">Полированный бетон</option>
+                            <option value="garage">Пол в гараж / СТО</option>
+                            <option value="outdoor">Придомовая территория</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="calc-row">
+                    <div class="calc-group">
+                        <label for="calc-thickness">Толщина слоя, см</label>
+                        <select id="calc-thickness">
+                            <option value="">Выберите толщину</option>
+                            <option value="5">5 см</option>
+                            <option value="8">8 см</option>
+                            <option value="10">10 см</option>
+                            <option value="12">12 см</option>
+                            <option value="15">15 см</option>
+                            <option value="20">20 см +</option>
+                        </select>
+                    </div>
+                    <div class="calc-group">
+                        <label for="calc-reinforcement">Армирование</label>
+                        <select id="calc-reinforcement">
+                            <option value="">Выберите тип</option>
+                            <option value="none">Без армирования</option>
+                            <option value="mesh">Сетка (100×100)</option>
+                            <option value="rebar">Арматура (12 мм)</option>
+                            <option value="fiber">Полипропиленовое волокно</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="calc-row calc-row-full">
+                    <div class="calc-group">
+                        <label>Дополнительные опции</label>
+                        <div class="calc-checkboxes">
+                            <label class="calc-checkbox">
+                                <input type="checkbox" id="opt-topping" value="topping">
+                                <span class="checkmark"></span>
+                                <span class="check-label">Топпинг (упрочнение)</span>
+                            </label>
+                            <label class="calc-checkbox">
+                                <input type="checkbox" id="opt-cuts" value="cuts">
+                                <span class="checkmark"></span>
+                                <span class="check-label">Нарезка деформационных швов</span>
+                            </label>
+                            <label class="calc-checkbox">
+                                <input type="checkbox" id="opt-heating" value="heating">
+                                <span class="checkmark"></span>
+                                <span class="check-label">Противоморозная добавка</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-calc" onclick="calculateCost()">
+                    <i class="fas fa-calculator"></i> Рассчитать стоимость
+                </button>
+            </div>
+            <div class="calc-result" id="calcResult">
+                <div class="calc-result-placeholder">
+                    <i class="fas fa-calculator"></i>
+                    <p>Заполните параметры и нажмите «Рассчитать»</p>
+                </div>
+            </div>
+        </div>
+        <p class="calc-disclaimer">
+            <i class="fas fa-info-circle"></i> 
+            Расчёт предварительный. Точная стоимость определяется после бесплатного выезда инженера на объект.
+        </p>
+    </section>
+
+<section class="cta" id="contacts">
         <div class="cta-container animate-scale">
             <h2>Получите расчёт стоимости за 2 часа</h2>
             <p>Оставьте заявку — наш инженер свяжется с вами, уточнит детали и подготовит коммерческое предложение с точной сметой</p>

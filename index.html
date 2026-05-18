@@ -1288,6 +1288,628 @@
             }
         }
         
+        
+        /* ===== COST CALCULATOR ===== */
+        .calculator {
+            padding: 100px 0;
+            background: transparent;
+        }
+
+        .calculator-container {
+            max-width: 900px;
+            margin: 60px auto 0;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .calc-form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .calc-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .calc-row-full {
+            grid-template-columns: 1fr;
+        }
+
+        .calc-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .calc-group label {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: none;
+        }
+
+        .calc-group input,
+        .calc-group select {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: var(--white);
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .calc-group input:focus,
+        .calc-group select:focus {
+            border-color: var(--sky-blue);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.1);
+        }
+
+        .calc-group input::placeholder {
+            color: var(--gray-dark);
+        }
+
+        .calc-group select option {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .calc-checkboxes {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .calc-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            font-size: 0.95rem;
+            text-transform: none;
+            transition: color 0.3s;
+        }
+
+        .calc-checkbox:hover {
+            color: var(--light-blue);
+        }
+
+        .calc-checkbox input {
+            display: none;
+        }
+
+        .checkmark {
+            width: 22px;
+            height: 22px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .calc-checkbox input:checked + .checkmark {
+            background: linear-gradient(135deg, var(--blue), var(--sky-blue));
+            border-color: var(--blue);
+        }
+
+        .calc-checkbox input:checked + .checkmark::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: white;
+            font-size: 0.75rem;
+        }
+
+        .btn-calc {
+            width: 100%;
+            background: linear-gradient(135deg, var(--blue), var(--sky-blue));
+            color: white;
+            padding: 18px 30px;
+            border-radius: 30px;
+            border: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-calc:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+        }
+
+        .calc-result {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .calc-result-placeholder {
+            text-align: center;
+            color: var(--gray);
+        }
+
+        .calc-result-placeholder i {
+            font-size: 3rem;
+            color: var(--sky-blue);
+            opacity: 0.5;
+            margin-bottom: 15px;
+        }
+
+        .calc-result-placeholder p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            text-transform: none;
+        }
+
+        .calc-result-content {
+            animation: calcFadeIn 0.5s ease;
+        }
+
+        @keyframes calcFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .calc-result-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .calc-price {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--sky-blue);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .calc-price-note {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            text-transform: none;
+        }
+
+        .calc-breakdown {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        .calc-breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95rem;
+            color: var(--gray);
+            text-transform: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .calc-breakdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .calc-breakdown-item span:first-child {
+            color: var(--light-blue);
+        }
+
+        .calc-breakdown-item span:last-child {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .calc-total-item {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(125, 211, 252, 0.3);
+        }
+
+        .calc-total-item span:first-child {
+            color: var(--sky-blue);
+            font-weight: 700;
+        }
+
+        .calc-total-item span:last-child {
+            color: var(--sky-blue);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .calc-disclaimer {
+            text-align: center;
+            max-width: 700px;
+            margin: 30px auto 0;
+            padding: 0 20px;
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray-dark);
+            font-size: 0.85rem;
+            text-transform: none;
+            line-height: 1.6;
+        }
+
+        .calc-disclaimer i {
+            color: var(--sky-blue);
+            margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .calc-form,
+            .calc-result {
+                padding: 25px;
+            }
+
+            .calc-row {
+                grid-template-columns: 1fr;
+            }
+
+            .calc-price {
+                font-size: 2.2rem;
+            }
+
+            .btn-calc {
+                padding: 16px 24px;
+                font-size: 1rem;
+            }
+        }
+
+        
+        /* ===== COST CALCULATOR ===== */
+        .calculator {
+            padding: 100px 0;
+            background: transparent;
+        }
+
+        .calculator-container {
+            max-width: 900px;
+            margin: 60px auto 0;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .calc-form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .calc-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .calc-row-full {
+            grid-template-columns: 1fr;
+        }
+
+        .calc-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .calc-group label {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: none;
+        }
+
+        .calc-group input,
+        .calc-group select {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: var(--white);
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .calc-group input:focus,
+        .calc-group select:focus {
+            border-color: var(--sky-blue);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.1);
+        }
+
+        .calc-group input::placeholder {
+            color: var(--gray-dark);
+        }
+
+        .calc-group select option {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .calc-checkboxes {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .calc-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            font-size: 0.95rem;
+            text-transform: none;
+            transition: color 0.3s;
+        }
+
+        .calc-checkbox:hover {
+            color: var(--light-blue);
+        }
+
+        .calc-checkbox input {
+            display: none;
+        }
+
+        .checkmark {
+            width: 22px;
+            height: 22px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .calc-checkbox input:checked + .checkmark {
+            background: linear-gradient(135deg, var(--blue), var(--sky-blue));
+            border-color: var(--blue);
+        }
+
+        .calc-checkbox input:checked + .checkmark::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: white;
+            font-size: 0.75rem;
+        }
+
+        .btn-calc {
+            width: 100%;
+            background: linear-gradient(135deg, var(--blue), var(--sky-blue));
+            color: white;
+            padding: 18px 30px;
+            border-radius: 30px;
+            border: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-calc:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+        }
+
+        .calc-result {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .calc-result-placeholder {
+            text-align: center;
+            color: var(--gray);
+        }
+
+        .calc-result-placeholder i {
+            font-size: 3rem;
+            color: var(--sky-blue);
+            opacity: 0.5;
+            margin-bottom: 15px;
+        }
+
+        .calc-result-placeholder p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            text-transform: none;
+        }
+
+        .calc-result-content {
+            animation: calcFadeIn 0.5s ease;
+        }
+
+        @keyframes calcFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .calc-result-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .calc-price {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--sky-blue);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .calc-price-note {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            text-transform: none;
+        }
+
+        .calc-breakdown {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        .calc-breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95rem;
+            color: var(--gray);
+            text-transform: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .calc-breakdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .calc-breakdown-item span:first-child {
+            color: var(--light-blue);
+        }
+
+        .calc-breakdown-item span:last-child {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .calc-total-item {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(125, 211, 252, 0.3);
+        }
+
+        .calc-total-item span:first-child {
+            color: var(--sky-blue);
+            font-weight: 700;
+        }
+
+        .calc-total-item span:last-child {
+            color: var(--sky-blue);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .calc-disclaimer {
+            text-align: center;
+            max-width: 700px;
+            margin: 30px auto 0;
+            padding: 0 20px;
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray-dark);
+            font-size: 0.85rem;
+            text-transform: none;
+            line-height: 1.6;
+        }
+
+        .calc-disclaimer i {
+            color: var(--sky-blue);
+            margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .calc-form,
+            .calc-result {
+                padding: 25px;
+            }
+
+            .calc-row {
+                grid-template-columns: 1fr;
+            }
+
+            .calc-price {
+                font-size: 2.2rem;
+            }
+
+            .btn-calc {
+                padding: 16px 24px;
+                font-size: 1rem;
+            }
+        }
+
         /* ===== PHOTO STRIP (Horizontal Scroll) ===== */
         .gallery {
             padding: 100px 0;
@@ -1988,6 +2610,7 @@
                 <li><a href="#about" onclick="closeMobileMenu()">О компании</a></li>
                 <li><a href="#gallery" onclick="closeMobileMenu()">Проекты</a></li>
                 <li><a href="#process" onclick="closeMobileMenu()">Этапы работ</a></li>
+                <li><a href="#calculator" onclick="closeMobileMenu()">Калькулятор</a></li>
                 <li><a href="#faq" onclick="closeMobileMenu()">Вопрос/Ответ</a></li>
                 <li><a href="#contacts" onclick="closeMobileMenu()">Контакты</a></li>
                 <li class="mobile-only"><a href="tel:+79082701848" class="mobile-phone-link"><i class="fas fa-phone"></i> +7 (908) 270-18-48</a></li>
@@ -2022,7 +2645,7 @@
                     </div>
                 </div>
                 <div class="hero-buttons">
-                    <a href="#contacts" class="btn-primary">
+                    <a href="#calculator" class="btn-primary">
                         Рассчитать стоимость <i class="fas fa-arrow-right"></i>
                     </a>
                     <a href="#gallery" class="btn-secondary">Наши проекты</a>
@@ -2577,6 +3200,120 @@
             if (e.key === 'ArrowLeft') changeLightbox(-1);
             if (e.key === 'ArrowRight') changeLightbox(1);
         });
+
+        
+        // ===== COST CALCULATOR =====
+        function calculateCost() {
+            const area = parseFloat(document.getElementById('calc-area').value) || 0;
+            const type = document.getElementById('calc-type').value;
+            const thickness = parseFloat(document.getElementById('calc-thickness').value) || 0;
+            const reinforcement = document.getElementById('calc-reinforcement').value;
+            const hasTopping = document.getElementById('opt-topping').checked;
+            const hasCuts = document.getElementById('opt-cuts').checked;
+            const hasHeating = document.getElementById('opt-heating').checked;
+
+            if (!area || !type || !thickness) {
+                alert('Пожалуйста, заполните обязательные поля: площадь, тип покрытия и толщину');
+                return;
+            }
+
+            // Base prices per m² (approximate for Perm region)
+            const basePrices = {
+                'industrial': 2500,
+                'warehouse': 3200,
+                'polymer': 4500,
+                'stamped': 3800,
+                'polished': 4000,
+                'garage': 2800,
+                'outdoor': 2200
+            };
+
+            // Thickness multiplier
+            const thicknessMultiplier = thickness / 10; // base is 10cm
+
+            // Reinforcement prices per m²
+            const reinforcementPrices = {
+                'none': 0,
+                'mesh': 150,
+                'rebar': 300,
+                'fiber': 200
+            };
+
+            // Option prices per m²
+            const optionPrices = {
+                'topping': 400,
+                'cuts': 100,
+                'heating': 250
+            };
+
+            // Calculate
+            const basePrice = basePrices[type] || 2500;
+            const baseCost = area * basePrice * thicknessMultiplier;
+            const reinforcementCost = area * (reinforcementPrices[reinforcement] || 0);
+            const toppingCost = hasTopping ? area * optionPrices['topping'] : 0;
+            const cutsCost = hasCuts ? area * optionPrices['cuts'] : 0;
+            const heatingCost = hasHeating ? area * optionPrices['heating'] : 0;
+
+            const totalCost = baseCost + reinforcementCost + toppingCost + cutsCost + heatingCost;
+            const minCost = totalCost * 0.85;
+            const maxCost = totalCost * 1.15;
+
+            // Get type name
+            const typeNames = {
+                'industrial': 'Промышленный пол',
+                'warehouse': 'Складской пол',
+                'polymer': 'Полимерное покрытие',
+                'stamped': 'Печатный бетон',
+                'polished': 'Полированный бетон',
+                'garage': 'Пол в гараж/СТО',
+                'outdoor': 'Придомовая территория'
+            };
+
+            // Generate result HTML
+            const resultHTML = `
+                <div class="calc-result-content">
+                    <div class="calc-result-title">Предварительный расчёт</div>
+                    <div class="calc-price">${formatPrice(totalCost)} ₽</div>
+                    <div class="calc-price-note">Диапазон: ${formatPrice(minCost)} — ${formatPrice(maxCost)} ₽</div>
+                    <div class="calc-breakdown">
+                        <div class="calc-breakdown-item">
+                            <span>${typeNames[type]}</span>
+                            <span>${formatPrice(baseCost)} ₽</span>
+                        </div>
+                        ${reinforcementCost > 0 ? `
+                        <div class="calc-breakdown-item">
+                            <span>Армирование</span>
+                            <span>${formatPrice(reinforcementCost)} ₽</span>
+                        </div>` : ''}
+                        ${toppingCost > 0 ? `
+                        <div class="calc-breakdown-item">
+                            <span>Топпинг</span>
+                            <span>${formatPrice(toppingCost)} ₽</span>
+                        </div>` : ''}
+                        ${cutsCost > 0 ? `
+                        <div class="calc-breakdown-item">
+                            <span>Нарезка швов</span>
+                            <span>${formatPrice(cutsCost)} ₽</span>
+                        </div>` : ''}
+                        ${heatingCost > 0 ? `
+                        <div class="calc-breakdown-item">
+                            <span>Противоморозная добавка</span>
+                            <span>${formatPrice(heatingCost)} ₽</span>
+                        </div>` : ''}
+                        <div class="calc-breakdown-item calc-total-item">
+                            <span>ИТОГО</span>
+                            <span>${formatPrice(totalCost)} ₽</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('calcResult').innerHTML = resultHTML;
+        }
+
+        function formatPrice(price) {
+            return Math.round(price).toLocaleString('ru-RU');
+        }
 
         // Initialize on load
         document.addEventListener('DOMContentLoaded', initLightbox);

@@ -79,9 +79,9 @@
         }
         
         .nav-container {
-            max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -115,11 +115,12 @@
         
         .logo-main {
             font-family: 'Oswald', sans-serif;
-            font-size: 1.6rem;
+            font-size: clamp(1.3rem, 1.5vw, 1.6rem);
             font-weight: 700;
             color: var(--white);
             letter-spacing: 1px;
             text-transform: none;
+            white-space: nowrap;
         }
         
         .logo-sub {
@@ -133,8 +134,10 @@
         
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: clamp(25px, 3vw, 50px);
             list-style: none;
+            white-space: nowrap;
+            align-items: center;
         }
         
         .nav-links a {
@@ -143,9 +146,11 @@
             color: var(--white);
             font-weight: 500;
             transition: color 0.3s;
-            font-size: 0.95rem;
+            font-size: clamp(0.85rem, 1vw, 0.95rem);
             text-transform: none;
             text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            white-space: nowrap;
+            flex-shrink: 0;
         }
         
         .nav-links a:hover {
@@ -155,14 +160,16 @@
         .phone-btn {
             background: linear-gradient(135deg, var(--blue), var(--sky-blue));
             color: white;
-            padding: 12px 28px;
+            padding: 10px 22px;
             border-radius: 30px;
             text-decoration: none;
             font-family: 'Oswald', sans-serif;
             font-weight: 500;
-            font-size: 1rem;
+            font-size: clamp(0.85rem, 1vw, 1rem);
             letter-spacing: 0.5px;
             transition: transform 0.3s, box-shadow 0.3s;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
         
         .phone-btn:hover {
@@ -958,6 +965,16 @@
         }
         
         /* ========== MOBILE ADAPTATION ========== */
+        @media (max-width: 1200px) {
+            .nav-container {
+                padding: 0 30px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+        }
+
         @media (max-width: 1024px) {
             .hero-content h1 {
                 font-size: 2.8rem;
@@ -1826,8 +1843,10 @@
         /* ===== MOBILE MENU STYLES ===== */
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: clamp(25px, 3vw, 50px);
             list-style: none;
+            white-space: nowrap;
+            align-items: center;
         }
 
         @media (max-width: 768px) {

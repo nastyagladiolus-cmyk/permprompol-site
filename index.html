@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПермПромПол — Пермский Профессиональный Подход | Промышленные бетонные полы</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --white: #ffffff;
+            --light-blue: #e8f4fd;
+            --sky-blue: #7dd3fc;
+            --blue: #3b82f6;
+            --dark-blue: #1e3a5f;
+            --navy: #0f172a;
+            --gray-light: #f1f5f9;
+            --gray: #94a3b8;
+            --gray-dark: #475569;
+            --concrete: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Roboto', 'Segoe UI', sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+            background: var(--navy);
+        }
+        
+        h1, h2, h3, .section-title, .stat-number, .step-number, .cta-phone {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* ===== ФОНОВОЕ ВИДЕО НА ВЕСЬ САЙТ ===== */
+        .site-video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+        
+        .site-video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .site-video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.65);
+            z-index: -1;
+        }
+        
+        /* Navigation — прозрачная шапка */
+        nav {
+            background: rgba(15, 23, 42, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 70px;
+            width: 70px;
+            border-radius: 16px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        
+        .logo-main {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 1px;
+            text-transform: none;
+        }
+        
+        .logo-sub {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.7rem;
+            color: var(--gray);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            font-family: 'Roboto', sans-serif;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+            text-transform: none;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .nav-links a:hover {
+            color: var(--sky-blue);
+        }
+        
+        .phone-btn {
+            background: linear-gradient(135deg, var(--blue), var(--sky-blue));
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .phone-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .hero-content h1 span {
+            color: var(--sky-blue);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 35px;
+            text-transform: none;
+            line-height: 1.6;
+            max-width: 100%;
+        }
+        
+        .hero-features {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--light-blue);
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95rem;
+            text-transform: none;
+        }
+        
+        .hero-feature-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(125, 211, 252, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--sky-blue);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--blue), var(--sky-blue));
+            color: white;
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--sky-blue);
+        }
+        
+        /* Stats Bar — стеклянный эффект */
+        .stats-bar {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--sky-blue);
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            font-size: 0.95rem;
+            text-transform: none;
+        }
+        
+        /* Services Section — стеклянные карточки */
+        .services {
+            padding: 100px 0;
+            background: transparent;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-tag {
+            display: inline-block;
+            background: rgba(125, 211, 252, 0.2);
+            color: var(--sky-blue);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .section-desc {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            font-size: 1.1rem;
+            text-transform: none;
+            line-height: 1.6;
+        }
+        
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.4s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--sky-blue);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue), var(--sky-blue));
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(125, 211, 252, 0.2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--sky-blue);
+            margin-bottom: 25px;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .service-title {
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .service-desc {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            text-transform: none;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: transparent;
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .about-visual {
+            position: relative;
+            height: 400px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .about-video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .about-video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .about-content h2 {
+            font-size: 2.8rem;
+            color: var(--white);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .about-content p {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            text-transform: none;
+        }
+        
+        .about-features {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .about-feature-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--blue), var(--sky-blue));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .about-feature-text {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: var(--white);
+            font-size: 0.95rem;
+            text-transform: none;
+        }
+        
+        /* Process Section */
+        .process {
+            padding: 100px 0;
+            background: transparent;
+        }
+        
+        .process .section-tag {
+            background: rgba(125, 211, 252, 0.2);
+            color: var(--sky-blue);
+        }
+        
+        .process .section-title {
+            color: var(--white);
+        }
+        
+        .process .section-desc {
+            color: var(--gray);
+        }
+        
+        .process-steps {
+            max-width: 1200px;
+            margin: 60px auto 0;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .process-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            top: 50px;
+            right: -25px;
+            color: var(--sky-blue);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--blue), var(--sky-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+        
+        .step-title {
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .step-desc {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-transform: none;
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: 100px 0;
+            background: transparent;
+        }
+        
+        .projects-grid {
+            max-width: 1200px;
+            margin: 60px auto 0;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .project-image {
+            height: 220px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(125, 211, 252, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--sky-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(15, 23, 42, 0.9));
+        }
+        
+        .project-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--blue);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            z-index: 2;
+        }
+        
+        .project-info {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .project-meta span {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: none;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: transparent;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .cta p {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            text-transform: none;
+        }
+        
+        .cta-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, var(--blue), var(--sky-blue));
+            color: white;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+        }
+        
+        .cta-phone:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4);
+        }
+        
+        .social-links-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .social-links-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links-cta .tg-link {
+            background: #0088cc;
+        }
+        
+        .social-links-cta .vk-link {
+            background: #4a76a8;
+        }
+        
+        .social-links-cta a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--gray);
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .footer-brand {
+            max-width: 300px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 55px;
+            width: 55px;
+            border-radius: 10px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .footer-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo-text div:first-child {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-logo-text div:last-child {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+        
+        .footer-brand p {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            text-transform: none;
+        }
+        
+        .footer-column h4 {
+            font-family: 'Oswald', sans-serif;
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+            text-transform: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--sky-blue);
+        }
+        
+        .social-footer {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-footer a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .social-footer .tg-footer {
+            background: #0088cc;
+            color: white;
+        }
+        
+        .social-footer .vk-footer {
+            background: #4a76a8;
+            color: white;
+        }
+        
+        .social-footer a:hover {
+            transform: scale(1.1);
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 50px auto 0;
+            padding: 30px 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.9rem;
+            text-transform: none;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--white);
+        }
+        
+        /* ========== MOBILE ADAPTATION ========== */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-step:not(:last-child)::after {
+                display: none;
+            }
+            
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .phone-btn {
+                display: none;
+            }
+            
+            .logo img {
+                height: 50px;
+                width: 50px;
+            }
+            
+            .logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .logo-sub {
+                font-size: 0.6rem;
+            }
+            
+            .hero {
+                min-height: auto;
+                padding-top: 80px;
+            }
+            
+            .hero-container {
+                padding: 60px 15px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+                line-height: 1.2;
+                margin-bottom: 20px;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+            
+            .hero-features {
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 30px;
+                align-items: center;
+            }
+            
+            .hero-feature {
+                font-size: 0.9rem;
+            }
+            
+            .hero-feature-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 18px 30px;
+                font-size: 1rem;
+            }
+            
+            /* Stats mobile */
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .stat-number {
+                font-size: 2.2rem;
+            }
+            
+            /* Services mobile */
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            /* About mobile */
+            .about-visual {
+                aspect-ratio: 16 / 9;
+            }
+            
+            .about-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Process mobile */
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+            
+            /* Projects mobile */
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* CTA mobile */
+            .cta h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-phone {
+                font-size: 1.4rem;
+                padding: 18px 30px;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .social-links-cta {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .social-links-cta a {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            /* Footer mobile */
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-brand {
+                max-width: 100%;
+            }
+            
+            .footer-logo img {
+                height: 48px;
+                width: 48px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+            
+            .logo img {
+                height: 45px;
+                width: 45px;
+            }
+            
+            .logo-main {
+                font-size: 1.1rem;
+            }
+            
+            .logo-sub {
+                font-size: 0.55rem;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .stat-label {
+                font-size: 0.85rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .service-card {
+                padding: 30px 20px;
+            }
+            
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .cta h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-phone {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ФОНОВОЕ ВИДЕО НА ВЕСЬ САЙТ -->
+    <div class="site-video-bg">
+        <video autoplay muted loop playsinline poster="https://i.postimg.cc/pVcBVWYn/P-20260518-030035-0000.png">
+            <source src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompol-video/796de83b004055a241f97e5a80555bb4b0776e8c/lv_0_20260518153819%5B1%5D.mp4" type="video/mp4">
+        </video>
+    </div>
+    <!-- Затемнение поверх видео -->
+    <div class="site-video-overlay"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="https://i.postimg.cc/pVcBVWYn/P-20260518-030035-0000.png" alt="ПермПромПол">
+                <div class="logo-text">
+                    <span class="logo-main">ПермПромПол</span>
+                    <span class="logo-sub">Пермский Профессиональный Подход</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#about">О компании</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#process">Этапы работ</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+            <a href="tel:+79082701848" class="phone-btn">
+                <i class="fas fa-phone" style="margin-right: 8px;"></i>+7 (908) 270-18-48
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Промышленные бетонные полы <span>в Перми</span></h1>
+                <p class="hero-subtitle">Устройство бетонных полов любой сложности для складов, производств, ангаров и торговых центров. А также придомовые территории.</p>
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <div class="hero-feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <span>Собственный инструмент</span>
+                    </div>
+                    <div class="hero-feature">
+                        <div class="hero-feature-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <span>Работаем по Перми и Пермскому краю</span>
+                    </div>
+                    <div class="hero-feature">
+                        <div class="hero-feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <span>Индивидуальный подход к каждому заказчику</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#contacts" class="btn-primary">
+                        Рассчитать стоимость <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#projects" class="btn-secondary">Наши проекты</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Лет работы</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Реализованных объектов</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50 000+</div>
+                <div class="stat-label">м² залито бетона</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Довольных клиентов</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <span class="section-tag">Наши услуги</span>
+            <h2 class="section-title">Полный спектр работ по бетонным полам</h2>
+            <p class="section-desc">Выполняем все этапы — от проектирования до финишной отделки промышленных полов любой сложности</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <h3 class="service-title">Промышленные полы</h3>
+                <p class="service-desc">Устройство бетонных полов для заводов, цехов и производственных площадок с учётом нагрузок от оборудования и погрузчиков</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-warehouse"></i>
+                </div>
+                <h3 class="service-title">Складские полы</h3>
+                <p class="service-desc">Бетонирование полов под высокие стеллажные нагрузки. Упрочнение топпингом и армирование волокном для долговечности</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3 class="service-title">Полы для СТО и паркингов</h3>
+                <p class="service-desc">Химически стойкие покрытия для автосервисов, моек и подземных паркингов с дренажными системами</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-snowflake"></i>
+                </div>
+                <h3 class="service-title">Холодильные камеры</h3>
+                <p class="service-desc">Специальные бетонные полы с термоусадочными швами для морозильных складов и холодильных комплексов</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 class="service-title">Топпинг и полировка</h3>
+                <p class="service-desc">Упрочнение поверхности кварцевым или металлическим топпингом. Полировка для получения зеркального блеска</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3 class="service-title">Полимерные полы</h3>
+                <p class="service-desc">Наливные полимерные покрытия для помещений с повышенными требованиями к чистоте и химической стойкости</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-paint-roller"></i>
+                </div>
+                <h3 class="service-title">Печатный бетон</h3>
+                <p class="service-desc">Декоративный бетон с текстурой камня, кирпича или дерева. Идеален для ландшафтного дизайна и тротуаров</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3 class="service-title">Придомовая территория</h3>
+                <p class="service-desc">Отмостки, дорожки, площадки и благоустройство придомовых территорий частных домов и многоквартирных домов</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section с ВИДЕО -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-visual">
+                <div class="about-video-wrapper">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompol-video/25f0603c579671d10a00be69c9425fe109c768f6/lv_0_20260518155119%5B1%5D.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="about-content">
+                <h2>Почему именно мы?</h2>
+                <p>Мы — пермская компания с 5-летним опытом в сфере промышленных бетонных полов. За это время реализовали более 100 проектов от небольших СТО до крупных логистических центров.</p>
+                <p>Используем только сертифицированные материалы от ведущих производителей. Контролируем качество и сроки на каждом этапе.</p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <span class="about-feature-text">Проектирование и смета</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <span class="about-feature-text">Выезд на объект за 24 часа</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <span class="about-feature-text">Работаем с НДС и без</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <span class="about-feature-text">Индивидуальный подход</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="section-header">
+            <span class="section-tag">Как мы работаем</span>
+            <h2 class="section-title">4 этапа до готового пола</h2>
+            <p class="section-desc">Прозрачный процесс работы с фиксированными сроками и контролем качества на каждом шаге</p>
+        </div>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Заявка и замер</h3>
+                <p class="step-desc">Бесплатный выезд инженера на объект в Перми и области. Оценка состояния основания, замеры, фотофиксация</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Проект и смета</h3>
+                <p class="step-desc">Расчёт сметы по проекту</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Подготовка и заливка</h3>
+                <p class="step-desc">Устройство основания, укладка гидроизоляции, армирование, заливка бетона с вибрированием и затиркой</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3 class="step-title">Уход и сдача</h3>
+                <p class="step-desc">Нарезка деформационных швов. Приёмка с актом готовности</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Slider -->
+    <section class="gallery" id="gallery">
+        <div class="section-header">
+            <span class="section-tag">Наши работы</span>
+            <h2 class="section-title">Реализованные проекты</h2>
+            <p class="section-desc">Примеры промышленных объектов, где мы устроили бетонные полы с гарантией качества</p>
+        </div>
+        <div class="slider-container">
+            <div class="slider-wrapper">
+            <div class="slide active">
+                    <img src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompolphoto/main/8si_tuAIa_NNMbeSZmplDciSwD0waMOlh9Zn0zWyGjXOF4-1aXGjBhB_W3pXWiXmpKN4OMiKlW4ETHddXKVfgWYA.jpg" alt="Полированный бетон">
+                    <div class="slide-caption">
+                        <h3>Полированный бетон</h3>
+                        <p>Зеркальная поверхность</p>
+                    </div>
+                </div>
+            <div class="slide">
+                    <img src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompolphoto/main/AJGV4UIi1fKjU2ZOCX01ekhlzWLKz7GZk_CxhIMiLLh-TC5XzFEyIF0MEvMFik82xJZb-SQIyvnN63Rh1gXdgesy_1.jpg" alt="Печатный бетон">
+                    <div class="slide-caption">
+                        <h3>Печатный бетон</h3>
+                        <p>Благоустройство территории</p>
+                    </div>
+                </div>
+            <div class="slide">
+                    <img src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompolphoto/main/DW85DEhZPNnBxXs-Xm8mTRNJOLzr1FedQRahSFc8hbda0odH85-zlm3yVjc4n1P92UqGTLQ7x_ks33U2HDys-6j8.jpg" alt="Промышленный пол">
+                    <div class="slide-caption">
+                        <h3>Промышленный пол</h3>
+                        <p>Заливка большой площади</p>
+                    </div>
+                </div>
+            <div class="slide">
+                    <img src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompolphoto/main/E1c6b6mdyJOshcGWqZ22boL-hcRZAMXmJuoGWr3NFjzMbhI9W2RH2OXxwEuAFyB5uS7XRMSdW2Gyw78gjjYHyhkT.jpg" alt="Полированный бетон">
+                    <div class="slide-caption">
+                        <h3>Полированный бетон</h3>
+                        <p>Внутреннее помещение</p>
+                    </div>
+                </div>
+            <div class="slide">
+                    <img src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompolphoto/main/JzNhSsYwlZ5XVffi_hnhHR9rzfq-bWGziR5bhjKQ-mw8oHBnGAJHswzuclG6Lq4sI2dEHx_GLCFms3Km4mEvEhKI.jpg" alt="Уличное бетонирование">
+                    <div class="slide-caption">
+                        <h3>Уличное бетонирование</h3>
+                        <p>Благоустройство</p>
+                    </div>
+                </div>
+            <div class="slide">
+                    <img src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompolphoto/main/OIK-pjgXt1YIykFdZGHthj_t7YKBEFSu4WLuCRdJIrKNBVfEuAoQr9vAMFeOaHtxDethYRcYdFTuaIwPIFtNkv9E.jpg" alt="Полированный бетон">
+                    <div class="slide-caption">
+                        <h3>Полированный бетон</h3>
+                        <p>Зеркальный блеск</p>
+                    </div>
+                </div>
+            <div class="slide">
+                    <img src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompolphoto/main/OMowm3K0V8JTHdQXzolhXaeZtu1FiTmlQFuJC0z2FPDmjxRnzgDYxKDPrvgA8lZbDGjbd0wGzVOjernlOtUDBSmb_1.jpg" alt="Печатный бетон">
+                    <div class="slide-caption">
+                        <h3>Печатный бетон</h3>
+                        <p>Двор частного дома</p>
+                    </div>
+                </div>
+            <div class="slide">
+                    <img src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompolphoto/main/QzvdHT0yF31xY5-Ee8wkRp3ysTdt7i7pgHmVP3gNyNuh8jLS_0USk9ZY1vvpnYuv5IZJE9BTp3r7yEsXtb2K3Cip_1.jpg" alt="Печатный бетон">
+                    <div class="slide-caption">
+                        <h3>Печатный бетон</h3>
+                        <p>Садовая дорожка</p>
+                    </div>
+                </div>
+            <div class="slide">
+                    <img src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompolphoto/main/gJsG5XatrriqN6sqkZIljZHDMJpTbqJH1Ysd-02_AlCvdB4JhrI9CoTxO_NEEIkNUQeS8amWo20SeBObi8PKVRDM.jpg" alt="Промышленный пол">
+                    <div class="slide-caption">
+                        <h3>Промышленный пол</h3>
+                        <p>Ангар / склад</p>
+                    </div>
+                </div>
+            <div class="slide">
+                    <img src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompolphoto/main/sACS-ZQCgH1PCIZYL187LM2XKz_S-DBHwYjz8NwSaq6msMSAETMwlB-3qPR34YhJmLZPTU0cpGR_CCYlS_gjPdpe.jpg" alt="Промышленный пол">
+                    <div class="slide-caption">
+                        <h3>Промышленный пол</h3>
+                        <p>Процесс заливки</p>
+                    </div>
+                </div>
+            <div class="slide">
+                    <img src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompolphoto/main/uXCobLv8oN7IP2542s6UobtQQq4vsGftj0yHiWzauJlT_EPRUFnMZr6HFR9cj5ipyLXbLEbod8XIbhYGVhB2yvs0_1.jpg" alt="Печатный бетон">
+                    <div class="slide-caption">
+                        <h3>Печатный бетон</h3>
+                        <p>Площадка с газоном</p>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-btn prev" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn next" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+                <span class="dot" onclick="goToSlide(4)"></span>
+                <span class="dot" onclick="goToSlide(5)"></span>
+                <span class="dot" onclick="goToSlide(6)"></span>
+                <span class="dot" onclick="goToSlide(7)"></span>
+                <span class="dot" onclick="goToSlide(8)"></span>
+                <span class="dot" onclick="goToSlide(9)"></span>
+                <span class="dot" onclick="goToSlide(10)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contacts">
+        <div class="cta-container">
+            <h2>Получите расчёт стоимости за 2 часа</h2>
+            <p>Оставьте заявку — наш инженер свяжется с вами, уточнит детали и подготовит коммерческое предложение с точной сметой</p>
+            <a href="tel:+79082701848" class="cta-phone">
+                <i class="fas fa-phone"></i> +7 (908) 270-18-48
+            </a>
+            <div class="social-links-cta">
+                <a href="https://t.me/+79082701848" target="_blank" class="tg-link">
+                    <i class="fab fa-telegram-plane"></i> Написать в Telegram
+                </a>
+                <a href="https://vk.com/permprompol" target="_blank" class="vk-link">
+                    <i class="fab fa-vk"></i> Написать ВКонтакте
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="https://i.postimg.cc/pVcBVWYn/P-20260518-030035-0000.png" alt="ПермПромПол">
+                    <div class="footer-logo-text">
+                        <div>ПермПромПол</div>
+                        <div>Пермский Профессиональный Подход</div>
+                    </div>
+                </div>
+                <p>Промышленные бетонные полы в Перми и Пермском крае. Полный цикл работ от проектирования до сдачи объекта.</p>
+                <div class="social-footer">
+                    <a href="https://t.me/+79082701848" target="_blank" class="tg-footer">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
+                    <a href="https://vk.com/permprompol" target="_blank" class="vk-footer">
+                        <i class="fab fa-vk"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Услуги</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Промышленные полы</a></li>
+                    <li><a href="#">Складские полы</a></li>
+                    <li><a href="#">Топпинг и полировка</a></li>
+                    <li><a href="#">Полимерные полы</a></li>
+                    <li><a href="#">Печатный бетон</a></li>
+                    <li><a href="#">Придомовая территория</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Компания</h4>
+                <ul class="footer-links">
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Проекты</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="#">Документы</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Контакты</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:+79082701848"><i class="fas fa-phone" style="margin-right: 8px;"></i>+7 (908) 270-18-48</a></li>
+                    <li><a href="mailto:info@permprompol.ru"><i class="fas fa-envelope" style="margin-right: 8px;"></i>info@permprompol.ru</a></li>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>г. Пермь</li>
+                    <li><i class="fas fa-clock" style="margin-right: 8px;"></i>Пн-Пт: 10:00 — 20:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ПермПромПол — Пермский Профессиональный Подход. Все права защищены. | <a href="#" style="color: var(--gray);">Политика конфиденциальности</a></p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+        let autoSlideInterval;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                dots[i].classList.remove('active');
+            });
+
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function changeSlide(direction) {
+            let newIndex = currentSlide + direction;
+            if (newIndex >= totalSlides) newIndex = 0;
+            if (newIndex < 0) newIndex = totalSlides - 1;
+            showSlide(newIndex);
+            resetAutoSlide();
+        }
+
+        function goToSlide(index) {
+            showSlide(index);
+            resetAutoSlide();
+        }
+
+        function nextSlide() {
+            let newIndex = currentSlide + 1;
+            if (newIndex >= totalSlides) newIndex = 0;
+            showSlide(newIndex);
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        // Start auto-slide on page load
+        startAutoSlide();
+
+        // Pause on hover
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+
+        sliderContainer.addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        sliderContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        sliderContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    changeSlide(1);
+                } else {
+                    changeSlide(-1);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

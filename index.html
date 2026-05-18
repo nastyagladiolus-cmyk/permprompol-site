@@ -1196,6 +1196,128 @@
                 font-size: 1.2rem;
             }
         }
+        
+        /* ===== PHOTO STRIP (Horizontal Scroll) ===== */
+        .gallery {
+            padding: 100px 0;
+            background: transparent;
+        }
+
+        .photo-strip-container {
+            max-width: 1200px;
+            margin: 60px auto 0;
+            padding: 0 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .photo-strip {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            padding: 20px 0;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .photo-strip::-webkit-scrollbar {
+            display: none;
+        }
+
+        .strip-item {
+            flex: 0 0 auto;
+            width: 320px;
+            scroll-snap-align: start;
+            border-radius: 16px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+
+        .strip-item:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--sky-blue);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .strip-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .strip-caption {
+            padding: 15px 20px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-align: center;
+            text-transform: none;
+        }
+
+        .strip-btn {
+            flex: 0 0 auto;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .strip-btn:hover {
+            background: rgba(59, 130, 246, 0.8);
+            border-color: var(--blue);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .strip-item {
+                width: 260px;
+            }
+
+            .strip-item img {
+                height: 195px;
+            }
+
+            .strip-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .strip-item {
+                width: 220px;
+            }
+
+            .strip-item img {
+                height: 165px;
+            }
+
+            .photo-strip-container {
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 <body>

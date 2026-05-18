@@ -1427,112 +1427,66 @@
         </div>
     </section>
 
-    <!-- Photo Gallery Slider -->
+    <!-- Photo Gallery Strip -->
     <section class="gallery" id="gallery">
         <div class="section-header">
             <span class="section-tag">Наши работы</span>
             <h2 class="section-title">Реализованные проекты</h2>
             <p class="section-desc">Примеры промышленных объектов, где мы устроили бетонные полы с гарантией качества</p>
         </div>
-        <div class="slider-container">
-            <div class="slider-wrapper">
-            <div class="slide active">
-                    <img src="images/photo1.jpg" alt="Полированный бетон">
-                    <div class="slide-caption">
-                        <h3>Полированный бетон</h3>
-                        <p>Зеркальная поверхность</p>
-                    </div>
-                </div>
-            <div class="slide">
-                    <img src="images/photo2.jpg" alt="Печатный бетон">
-                    <div class="slide-caption">
-                        <h3>Печатный бетон</h3>
-                        <p>Благоустройство территории</p>
-                    </div>
-                </div>
-            <div class="slide">
-                    <img src="images/photo3.jpg" alt="Промышленный пол">
-                    <div class="slide-caption">
-                        <h3>Промышленный пол</h3>
-                        <p>Заливка большой площади</p>
-                    </div>
-                </div>
-            <div class="slide">
-                    <img src="images/photo4.jpg" alt="Полированный бетон">
-                    <div class="slide-caption">
-                        <h3>Полированный бетон</h3>
-                        <p>Внутреннее помещение</p>
-                    </div>
-                </div>
-            <div class="slide">
-                    <img src="images/photo5.jpg" alt="Уличное бетонирование">
-                    <div class="slide-caption">
-                        <h3>Уличное бетонирование</h3>
-                        <p>Благоустройство</p>
-                    </div>
-                </div>
-            <div class="slide">
-                    <img src="images/photo6.jpg" alt="Полированный бетон">
-                    <div class="slide-caption">
-                        <h3>Полированный бетон</h3>
-                        <p>Зеркальный блеск</p>
-                    </div>
-                </div>
-            <div class="slide">
-                    <img src="images/photo7.jpg" alt="Печатный бетон">
-                    <div class="slide-caption">
-                        <h3>Печатный бетон</h3>
-                        <p>Двор частного дома</p>
-                    </div>
-                </div>
-            <div class="slide">
-                    <img src="images/photo8.jpg" alt="Печатный бетон">
-                    <div class="slide-caption">
-                        <h3>Печатный бетон</h3>
-                        <p>Садовая дорожка</p>
-                    </div>
-                </div>
-            <div class="slide">
-                    <img src="images/photo9.jpg" alt="Промышленный пол">
-                    <div class="slide-caption">
-                        <h3>Промышленный пол</h3>
-                        <p>Ангар / склад</p>
-                    </div>
-                </div>
-            <div class="slide">
-                    <img src="images/photo10.jpg" alt="Промышленный пол">
-                    <div class="slide-caption">
-                        <h3>Промышленный пол</h3>
-                        <p>Процесс заливки</p>
-                    </div>
-                </div>
-            <div class="slide">
-                    <img src="images/photo11.jpg" alt="Печатный бетон">
-                    <div class="slide-caption">
-                        <h3>Печатный бетон</h3>
-                        <p>Площадка с газоном</p>
-                    </div>
-                </div>
-            </div>
-            <button class="slider-btn prev" onclick="changeSlide(-1)">
+        <div class="photo-strip-container">
+            <button class="strip-btn strip-prev" onclick="scrollStrip(-1)">
                 <i class="fas fa-chevron-left"></i>
             </button>
-            <button class="slider-btn next" onclick="changeSlide(1)">
+            <div class="photo-strip" id="photoStrip">
+                <div class="strip-item">
+                    <img src="images/photo1.jpg" alt="Полированный бетон">
+                    <div class="strip-caption">Полированный бетон — зеркальная поверхность</div>
+                </div>
+                <div class="strip-item">
+                    <img src="images/photo2.jpg" alt="Печатный бетон">
+                    <div class="strip-caption">Печатный бетон — благоустройство</div>
+                </div>
+                <div class="strip-item">
+                    <img src="images/photo3.jpg" alt="Промышленный пол">
+                    <div class="strip-caption">Промышленный пол — заливка</div>
+                </div>
+                <div class="strip-item">
+                    <img src="images/photo4.jpg" alt="Полированный бетон">
+                    <div class="strip-caption">Полированный бетон — помещение</div>
+                </div>
+                <div class="strip-item">
+                    <img src="images/photo5.jpg" alt="Уличное бетонирование">
+                    <div class="strip-caption">Уличное бетонирование</div>
+                </div>
+                <div class="strip-item">
+                    <img src="images/photo6.jpg" alt="Полированный бетон">
+                    <div class="strip-caption">Полированный бетон — блеск</div>
+                </div>
+                <div class="strip-item">
+                    <img src="images/photo7.jpg" alt="Печатный бетон">
+                    <div class="strip-caption">Печатный бетон — двор</div>
+                </div>
+                <div class="strip-item">
+                    <img src="images/photo8.jpg" alt="Печатный бетон">
+                    <div class="strip-caption">Печатный бетон — дорожка</div>
+                </div>
+                <div class="strip-item">
+                    <img src="images/photo9.jpg" alt="Промышленный пол">
+                    <div class="strip-caption">Промышленный пол — ангар</div>
+                </div>
+                <div class="strip-item">
+                    <img src="images/photo10.jpg" alt="Промышленный пол">
+                    <div class="strip-caption">Промышленный пол — заливка</div>
+                </div>
+                <div class="strip-item">
+                    <img src="images/photo11.jpg" alt="Печатный бетон">
+                    <div class="strip-caption">Печатный бетон — площадка</div>
+                </div>
+            </div>
+            <button class="strip-btn strip-next" onclick="scrollStrip(1)">
                 <i class="fas fa-chevron-right"></i>
             </button>
-            <div class="slider-dots">
-                <span class="dot active" onclick="goToSlide(0)"></span>
-                <span class="dot" onclick="goToSlide(1)"></span>
-                <span class="dot" onclick="goToSlide(2)"></span>
-                <span class="dot" onclick="goToSlide(3)"></span>
-                <span class="dot" onclick="goToSlide(4)"></span>
-                <span class="dot" onclick="goToSlide(5)"></span>
-                <span class="dot" onclick="goToSlide(6)"></span>
-                <span class="dot" onclick="goToSlide(7)"></span>
-                <span class="dot" onclick="goToSlide(8)"></span>
-                <span class="dot" onclick="goToSlide(9)"></span>
-                <span class="dot" onclick="goToSlide(10)"></span>
-            </div>
         </div>
     </section>
 
@@ -1612,86 +1566,39 @@
     </footer>
 
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-        const totalSlides = slides.length;
-        let autoSlideInterval;
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                dots[i].classList.remove('active');
+        // Photo Strip Scroll
+        function scrollStrip(direction) {
+            const strip = document.getElementById('photoStrip');
+            const scrollAmount = 340; // item width + gap
+            strip.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
             });
-
-            slides[index].classList.add('active');
-            dots[index].classList.add('active');
-            currentSlide = index;
         }
-
-        function changeSlide(direction) {
-            let newIndex = currentSlide + direction;
-            if (newIndex >= totalSlides) newIndex = 0;
-            if (newIndex < 0) newIndex = totalSlides - 1;
-            showSlide(newIndex);
-            resetAutoSlide();
-        }
-
-        function goToSlide(index) {
-            showSlide(index);
-            resetAutoSlide();
-        }
-
-        function nextSlide() {
-            let newIndex = currentSlide + 1;
-            if (newIndex >= totalSlides) newIndex = 0;
-            showSlide(newIndex);
-        }
-
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(nextSlide, 5000);
-        }
-
-        function resetAutoSlide() {
-            clearInterval(autoSlideInterval);
-            startAutoSlide();
-        }
-
-        // Start auto-slide on page load
-        startAutoSlide();
-
-        // Pause on hover
-        const sliderContainer = document.querySelector('.slider-container');
-        sliderContainer.addEventListener('mouseenter', () => {
-            clearInterval(autoSlideInterval);
-        });
-
-        sliderContainer.addEventListener('mouseleave', () => {
-            startAutoSlide();
-        });
 
         // Touch/swipe support for mobile
+        const photoStrip = document.getElementById('photoStrip');
         let touchStartX = 0;
         let touchEndX = 0;
 
-        sliderContainer.addEventListener('touchstart', (e) => {
+        photoStrip.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
         }, {passive: true});
 
-        sliderContainer.addEventListener('touchend', (e) => {
+        photoStrip.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
+            handleStripSwipe();
         }, {passive: true});
 
-        function handleSwipe() {
+        function handleStripSwipe() {
             const swipeThreshold = 50;
             const diff = touchStartX - touchEndX;
 
             if (Math.abs(diff) > swipeThreshold) {
                 if (diff > 0) {
-                    changeSlide(1);
+                    scrollStrip(1);
                 } else {
-                    changeSlide(-1);
+                    scrollStrip(-1);
                 }
             }
         }

@@ -1425,6 +1425,10 @@
                 border-radius: 2px;
                 transition: all 0.3s ease;
                 position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -1px;
+                margin-left: -11px;
             }
 
             .hamburger-line:nth-child(1) {
@@ -3257,14 +3261,17 @@
 
         // ===== MOBILE MENU =====
         function toggleMobileMenu() {
+            console.log('toggleMobileMenu called');
             const navLinks = document.getElementById('navLinks');
             const menuBtn = document.getElementById('mobileMenuBtn');
             const menuOverlay = document.getElementById('menuOverlay');
             const body = document.body;
 
             if (navLinks.classList.contains('active')) {
+                console.log('Menu is active, closing');
                 closeMobileMenu();
             } else {
+                console.log('Menu is inactive, opening');
                 navLinks.classList.add('active');
                 menuBtn.classList.add('active');
                 menuOverlay.classList.add('active');
@@ -3692,24 +3699,6 @@
             item.classList.toggle('active');
         }
     
-        // Number Counter Animation
-        
-
-        // Trigger number animation when stats section is visible
-        
-
-        // Scroll Animation Observer
-        
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
         
     </script>
 

@@ -68,80 +68,15 @@
             color: #e2e8f0 !important;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .btn-cta-main {
-            background: linear-gradient(135deg, var(--orange-dark), var(--orange));
-            color: white;
-            padding: 18px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 500;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-cta-main:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(234, 88, 12, 0.4);
-        }
-
-        .btn-social {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 18px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 500;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
-            color: white;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-social:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .tg-link {
-            background: #0088cc;
-        }
-
-        .tg-link:hover {
-            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4);
-        }
-
-        .vk-link {
-            background: #4a76a8;
-        }
-
-        .vk-link:hover {
-            box-shadow: 0 10px 30px rgba(74, 118, 168, 0.4);
-        }
-
         .calc-disclaimer {
             color: #94a3b8 !important;
         }
         
-        h1, h2, h3, .section-title, .stat-number, .step-number, 
+        h1, h2, h3, .section-title, .stat-number, .step-number, .cta-phone {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
         
         /* ===== ФОНОВОЕ ВИДЕО НА ВЕСЬ САЙТ ===== */
         .site-video-bg {
@@ -170,18 +105,7 @@
             z-index: -1;
         }
         
-        
-        /* Ensure all content is visible - animations removed */
-        .animate-on-scroll,
-        .animate-fade-left,
-        .animate-fade-right,
-        .animate-scale,
-        .animate-rotate {
-            opacity: 1 !important;
-            transform: none !important;
-        }
-
-/* Navigation — прозрачная шапка */
+        /* Navigation — прозрачная шапка */
         nav {
             background: transparent;
             position: fixed;
@@ -279,7 +203,25 @@
             color: var(--sky-blue);
         }
         
+        .phone-btn {
+            background: linear-gradient(135deg, var(--orange-dark), var(--orange));
+            color: white;
+            padding: 10px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.85rem, 1vw, 1rem);
+            letter-spacing: 0.5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
         
+        .phone-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(234, 88, 12, 0.3);
+        }
         
         /* Hero Section */
         .hero {
@@ -889,7 +831,63 @@
             text-transform: none;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
-
+        
+        .cta-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, var(--orange-dark), var(--orange));
+            color: white;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 15px 40px rgba(234, 88, 12, 0.3);
+        }
+        
+        .cta-phone:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4);
+        }
+        
+        .social-links-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .social-links-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links-cta .tg-link {
+            background: #0088cc;
+        }
+        
+        .social-links-cta .vk-link {
+            background: #4a76a8;
+        }
+        
+        .social-links-cta a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
         /* Footer */
         footer {
             background: rgba(15, 23, 42, 0.8);
@@ -1031,6 +1029,16 @@
         /* Mobile Menu */
         /* Mobile menu button styles moved to media query below */
 
+        .mobile-only {
+            display: none;
+        }
+
+        .mobile-phone-link {
+            color: var(--sky-blue) !important;
+            font-size: 1.1rem !important;
+            font-weight: 700;
+        }
+        
         /* ========== MOBILE ADAPTATION ========== */
         @media (max-width: 1200px) {
             .nav-container {
@@ -1071,9 +1079,13 @@
         }
         
         @media (max-width: 768px) {
-            .nav-links { /* replaced below */ }
-
+            /* nav-links styles moved to enhanced mobile menu block */
             
+            
+            
+            .phone-btn {
+                display: none;
+            }
             
             .logo img {
                 height: 50px;
@@ -1267,7 +1279,29 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
-
+            
+            /* CTA mobile */
+            .cta h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-phone {
+                font-size: 1.4rem;
+                padding: 18px 30px;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .social-links-cta {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .social-links-cta a {
+                width: 100%;
+                justify-content: center;
+            }
+            
             /* Footer mobile */
             .footer-container {
                 grid-template-columns: 1fr;
@@ -1391,6 +1425,10 @@
                 border-radius: 2px;
                 transition: all 0.3s ease;
                 position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -1px;
+                margin-left: -11px;
             }
 
             .hamburger-line:nth-child(1) {
@@ -1520,7 +1558,9 @@
                 font-size: 1.8rem;
             }
             
-            
+            .cta-phone {
+                font-size: 1.2rem;
+            }
         }
         
         
@@ -1836,316 +1876,7 @@
         }
 
         
-        /* ===== COST CALCULATOR ===== */
-        .calculator {
-            padding: 100px 0;
-            background: transparent;
-        }
-
-        .calculator-container {
-            max-width: 900px;
-            margin: 60px auto 0;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .calc-form {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .calc-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .calc-row-full {
-            grid-template-columns: 1fr;
-        }
-
-        .calc-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .calc-group label {
-            font-family: 'Roboto', sans-serif;
-            color: var(--gray);
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: none;
-        }
-
-        .calc-group input,
-        .calc-group select {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            padding: 14px 16px;
-            color: var(--white);
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-            outline: none;
-            transition: all 0.3s;
-            width: 100%;
-        }
-
-        .calc-group input:focus,
-        .calc-group select:focus {
-            border-color: var(--sky-blue);
-            background: rgba(255, 255, 255, 0.12);
-            box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.1);
-        }
-
-        .calc-group input::placeholder {
-            color: var(--gray-dark);
-        }
-
-        .calc-group select option {
-            background: var(--navy);
-            color: var(--white);
-        }
-
-        .calc-checkboxes {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .calc-checkbox {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-            font-family: 'Roboto', sans-serif;
-            color: var(--gray);
-            font-size: 0.95rem;
-            text-transform: none;
-            transition: color 0.3s;
-        }
-
-        .calc-checkbox:hover {
-            color: var(--light-blue);
-        }
-
-        .calc-checkbox input {
-            display: none;
-        }
-
-        .checkmark {
-            width: 22px;
-            height: 22px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            flex-shrink: 0;
-        }
-
-        .calc-checkbox input:checked + .checkmark {
-            background: linear-gradient(135deg, var(--blue), var(--sky-blue));
-            border-color: var(--blue);
-        }
-
-        .calc-checkbox input:checked + .checkmark::after {
-            content: '\f00c';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: white;
-            font-size: 0.75rem;
-        }
-
-        .btn-calc {
-            width: 100%;
-            background: linear-gradient(135deg, var(--blue), var(--sky-blue));
-            color: white;
-            padding: 18px 30px;
-            border-radius: 30px;
-            border: none;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 500;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .btn-calc:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(234, 88, 12, 0.4);
-        }
-
-        .calc-result {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .calc-result-placeholder {
-            text-align: center;
-            color: var(--gray);
-        }
-
-        .calc-result-placeholder i {
-            font-size: 3rem;
-            color: var(--sky-blue);
-            opacity: 0.5;
-            margin-bottom: 15px;
-        }
-
-        .calc-result-placeholder p {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-            text-transform: none;
-        }
-
-        .calc-result-content {
-            animation: calcFadeIn 0.5s ease;
-        }
-
-        @keyframes calcFadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .calc-result-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.2rem;
-            color: var(--gray);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .calc-price {
-            font-family: 'Oswald', sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--sky-blue);
-            margin-bottom: 10px;
-            line-height: 1;
-        }
-
-        .calc-price-note {
-            font-family: 'Roboto', sans-serif;
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-            text-transform: none;
-        }
-
-        .calc-breakdown {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-        }
-
-        .calc-breakdown-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            font-family: 'Roboto', sans-serif;
-            font-size: 0.95rem;
-            color: var(--gray);
-            text-transform: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .calc-breakdown-item:last-child {
-            border-bottom: none;
-        }
-
-        .calc-breakdown-item span:first-child {
-            color: var(--light-blue);
-        }
-
-        .calc-breakdown-item span:last-child {
-            color: var(--white);
-            font-weight: 500;
-        }
-
-        .calc-total-item {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 2px solid rgba(125, 211, 252, 0.3);
-        }
-
-        .calc-total-item span:first-child {
-            color: var(--sky-blue);
-            font-weight: 700;
-        }
-
-        .calc-total-item span:last-child {
-            color: var(--sky-blue);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .calc-disclaimer {
-            text-align: center;
-            max-width: 700px;
-            margin: 30px auto 0;
-            padding: 0 20px;
-            font-family: 'Roboto', sans-serif;
-            color: #94a3b8;
-            font-size: 0.85rem;
-            text-transform: none;
-            line-height: 1.6;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-        }
-
-        .calc-disclaimer i {
-            color: var(--sky-blue);
-            margin-right: 5px;
-        }
-
-        @media (max-width: 768px) {
-            .calculator-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .calc-form,
-            .calc-result {
-                padding: 25px;
-            }
-
-            .calc-row {
-                grid-template-columns: 1fr;
-            }
-
-            .calc-price {
-                font-size: 2.2rem;
-            }
-
-            .btn-calc {
-                padding: 16px 24px;
-                font-size: 1rem;
-            }
-        }
+        
 
         
         /* ===== CONTACT FORM ===== */
@@ -2409,25 +2140,7 @@
             }
         }
 
-        /* ===== GRADIENT DIVIDERS ===== */
-        .section-divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--orange), var(--sky-blue), var(--orange), transparent);
-            opacity: 0.6;
-            margin: 0 auto;
-            max-width: 800px;
-        }
-
-        /* ===== UNIFIED SECTION PADDINGS ===== */
-        @media (max-width: 768px) {
-            .services,
-            .about,
-            .process,
-            .gallery,
-            .faq,
-            .cta {
-                padding: 60px 0;
-            }
+        
 
             .stats-bar {
                 padding: 30px 0;
@@ -2695,25 +2408,7 @@
             }
         }
 
-        /* ===== GRADIENT DIVIDERS ===== */
-        .section-divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--orange), var(--sky-blue), var(--orange), transparent);
-            opacity: 0.6;
-            margin: 0 auto;
-            max-width: 800px;
-        }
-
-        /* ===== UNIFIED SECTION PADDINGS ===== */
-        @media (max-width: 768px) {
-            .services,
-            .about,
-            .process,
-            .gallery,
-            .faq,
-            .cta {
-                padding: 60px 0;
-            }
+        
 
             .stats-bar {
                 padding: 30px 0;
@@ -2747,7 +2442,87 @@
         }
 
         /* ===== SCROLL ANIMATIONS ===== */
+        .,
+        .,
+        .,
+        .,
+        . {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
         
+
+        . {
+            transform: translateX(-40px);
+        }
+
+        . {
+            transform: translateX(40px);
+        }
+
+        . {
+            transform: scale(0.9);
+        }
+
+        . {
+            transform: rotate(-5deg) scale(0.95);
+        }
+
+        ..visible,
+        ..visible,
+        ..visible,
+        ..visible,
+        ..visible {
+            opacity: 1;
+            transform: translateY(0) translateX(0) scale(1) rotate(0);
+        }
+
+        
+
+        . { transition-delay: 0.1s; }
+        . { transition-delay: 0.2s; }
+        . { transition-delay: 0.3s; }
+        . { transition-delay: 0.4s; }
+
+        /* ===== FLOATING CALL BUTTON ===== */
+        .floating-call-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--orange-dark), var(--orange));
+            color: white;
+            padding: 14px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(234, 88, 12, 0.4);
+            transition: all 0.3s;
+            z-index: 1000;
+            animation: floatPulse 2s infinite;
+        }
+
+        .floating-call-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
+        }
+
+        .floating-call-btn i {
+            font-size: 1.2rem;
+            animation: phoneShake 1.5s infinite;
+        }
+
+        @keyframes floatPulse {
+            0%, 100% { box-shadow: 0 10px 30px rgba(234, 88, 12, 0.4); }
+            50% { box-shadow: 0 10px 40px rgba(59, 130, 246, 0.6); }
+        }
 
         @keyframes phoneShake {
             0%, 100% { transform: rotate(0); }
@@ -2758,7 +2533,22 @@
             50% { transform: rotate(0); }
         }
 
-        @media (max-width: 768px)
+        @media (max-width: 768px) {
+            .floating-call-btn {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+
+            .floating-call-btn span {
+                display: none;
+            }
+
+            .floating-call-btn i {
+                font-size: 1.4rem;
+            }
+        }
     
         
         }
@@ -2845,7 +2635,13 @@
         /* ===== MOBILE PERFORMANCE ===== */
         @media (max-width: 768px) {
             /* Reduce animation complexity on mobile */
-            
+            .,
+            .,
+            .,
+            .,
+            . {
+                transition-duration: 0.4s;
+            }
 
             /* Simplify hover effects on touch devices */
             .service-card:hover,
@@ -2866,64 +2662,7 @@
             }
         }
 
-    /* ===== CTA BUTTONS ===== */
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-cta-main {
-            background: linear-gradient(135deg, var(--orange-dark), var(--orange));
-        }
-
-        .btn-social {
-            padding: 16px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 500;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-social.tg-link {
-            background: #0088cc;
-        }
-
-        .btn-social.vk-link {
-            background: #4a76a8;
-        }
-
-        .btn-social:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        @media (max-width: 768px) {
-            .cta-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .btn-social,
-            .btn-cta-main {
-                width: 100%;
-                justify-content: center;
-                padding: 18px 30px;
-                font-size: 1rem;
-            }
-        }
-
-        </style>
+    </style>
 </head>
 <body>
     <!-- ФОНОВОЕ ВИДЕО НА ВЕСЬ САЙТ -->
@@ -2956,9 +2695,11 @@
                 <li><a href="#calculator" onclick="closeMobileMenu()">Калькулятор</a></li>
                 <li><a href="#faq" onclick="closeMobileMenu()">Вопрос/Ответ</a></li>
                 <li><a href="#contacts" onclick="closeMobileMenu()">Контакты</a></li>
-                
+                <li class="mobile-only"><a href="tel:+79082701848" class="mobile-phone-link"><i class="fas fa-phone"></i> +7 (908) 270-18-48</a></li>
             </ul>
-            
+            <a href="tel:+79082701848" class="phone-btn">
+                <i class="fas fa-phone" style="margin-right: 8px;"></i>+7 (908) 270-18-48
+            </a>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()" id="mobileMenuBtn">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -2970,7 +2711,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <div class="hero-content animate-on-scroll">
+            <div class="hero-content">
                 <h1>Промышленные бетонные полы<br><span>в Перми</span></h1>
                 <p class="hero-subtitle">Устройство бетонных полов любой сложности для складов, производств, ангаров и торговых центров. А также придомовые территории.</p>
                 <div class="hero-features">
@@ -3000,19 +2741,19 @@
     <!-- Stats Bar -->
     <div class="stats-bar">
         <div class="stats-container">
-            <div class="stat-item animate-scale">
+            <div class="stat-item">
                 <div class="stat-number">10+</div>
                 <div class="stat-label">Лет работы</div>
             </div>
-            <div class="stat-item animate-scale">
+            <div class="stat-item">
                 <div class="stat-number">100+</div>
                 <div class="stat-label">Реализованных объектов</div>
             </div>
-            <div class="stat-item animate-scale">
+            <div class="stat-item">
                 <div class="stat-number">50 000+</div>
                 <div class="stat-label">м² залито бетона</div>
             </div>
-            <div class="stat-item animate-scale">
+            <div class="stat-item">
                 <div class="stat-number">98%</div>
                 <div class="stat-label">Довольных клиентов</div>
             </div>
@@ -3022,62 +2763,62 @@
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <div class="section-header animate-on-scroll">
+        <div class="section-header">
             <span class="section-tag">Наши услуги</span>
             <h2 class="section-title">Полный спектр работ по бетонным полам</h2>
             <p class="section-desc">Выполняем все этапы — от проектирования до финишной отделки промышленных полов любой сложности</p>
         </div>
         <div class="services-grid">
-            <div class="service-card animate-on-scroll">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-industry"></i>
                 </div>
                 <h3 class="service-title">Промышленные полы</h3>
                 <p class="service-desc">Устройство бетонных полов для заводов, цехов и производственных площадок с учётом нагрузок от оборудования и погрузчиков</p>
             </div>
-            <div class="service-card animate-on-scroll">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-warehouse"></i>
                 </div>
                 <h3 class="service-title">Складские полы</h3>
                 <p class="service-desc">Бетонирование полов под высокие стеллажные нагрузки. Упрочнение топпингом и армирование волокном для долговечности</p>
             </div>
-            <div class="service-card animate-on-scroll">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-car"></i>
                 </div>
                 <h3 class="service-title">Полы для СТО и паркингов</h3>
                 <p class="service-desc">Химически стойкие покрытия для автосервисов, моек и подземных паркингов с дренажными системами</p>
             </div>
-            <div class="service-card animate-on-scroll">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-snowflake"></i>
                 </div>
                 <h3 class="service-title">Холодильные камеры</h3>
                 <p class="service-desc">Специальные бетонные полы с термоусадочными швами для морозильных складов и холодильных комплексов</p>
             </div>
-            <div class="service-card animate-on-scroll">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-star"></i>
                 </div>
                 <h3 class="service-title">Топпинг и полировка</h3>
                 <p class="service-desc">Упрочнение поверхности кварцевым или металлическим топпингом. Полировка для получения зеркального блеска</p>
             </div>
-            <div class="service-card animate-on-scroll">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-flask"></i>
                 </div>
                 <h3 class="service-title">Полимерные полы</h3>
                 <p class="service-desc">Наливные полимерные покрытия для помещений с повышенными требованиями к чистоте и химической стойкости</p>
             </div>
-            <div class="service-card animate-on-scroll">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-paint-roller"></i>
                 </div>
                 <h3 class="service-title">Печатный бетон</h3>
                 <p class="service-desc">Декоративный бетон с текстурой камня, кирпича или дерева. Идеален для ландшафтного дизайна и тротуаров</p>
             </div>
-            <div class="service-card animate-on-scroll">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-home"></i>
                 </div>
@@ -3090,37 +2831,37 @@
     <!-- About Section с ВИДЕО -->
     <section class="about" id="about">
         <div class="about-container">
-            <div class="about-visual animate-fade-left">
+            <div class="about-visual">
                 <div class="about-video-wrapper">
                     <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
                         <source src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompol-site/main/video/lv_0_20260518175515%5B1%5D.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
-            <div class="about-content animate-fade-right">
+            <div class="about-content">
                 <h2>Почему именно мы?</h2>
                 <p>Мы — пермская компания с <strong>10-летним опытом</strong> в сфере промышленных бетонных полов. За это время реализовали более 100 проектов от небольших СТО до крупных логистических центров.</p>
                 <p>Используем только сертифицированные материалы от ведущих производителей. Контролируем качество и сроки на каждом этапе.</p>
                 <div class="about-features">
-                    <div class="about-feature animate-on-scroll delay-1">
+                    <div class="about-feature">
                         <div class="about-feature-icon">
                             <i class="fas fa-clipboard-list"></i>
                         </div>
                         <span class="about-feature-text">Проектирование и смета</span>
                     </div>
-                    <div class="about-feature animate-on-scroll delay-1">
+                    <div class="about-feature">
                         <div class="about-feature-icon">
                             <i class="fas fa-bolt"></i>
                         </div>
                         <span class="about-feature-text">Выезд на объект за 24 часа</span>
                     </div>
-                    <div class="about-feature animate-on-scroll delay-1">
+                    <div class="about-feature">
                         <div class="about-feature-icon">
                             <i class="fas fa-file-invoice-dollar"></i>
                         </div>
                         <span class="about-feature-text">Работаем с НДС и без</span>
                     </div>
-                    <div class="about-feature animate-on-scroll delay-1">
+                    <div class="about-feature">
                         <div class="about-feature-icon">
                             <i class="fas fa-handshake"></i>
                         </div>
@@ -3134,28 +2875,28 @@
 
     <!-- Process Section -->
     <section class="process" id="process">
-        <div class="section-header animate-on-scroll">
+        <div class="section-header">
             <span class="section-tag">Как мы работаем</span>
             <h2 class="section-title">4 этапа до готового пола</h2>
             <p class="section-desc">Прозрачный процесс работы с фиксированными сроками и контролем качества на каждом шаге</p>
         </div>
         <div class="process-steps">
-            <div class="process-step animate-on-scroll">
+            <div class="process-step">
                 <div class="step-number">1</div>
                 <h3 class="step-title">Заявка и замер</h3>
                 <p class="step-desc">Бесплатный выезд инженера на объект в Перми и области. Оценка состояния основания, замеры, фотофиксация</p>
             </div>
-            <div class="process-step animate-on-scroll">
+            <div class="process-step">
                 <div class="step-number">2</div>
                 <h3 class="step-title">Проект и смета</h3>
                 <p class="step-desc">Расчёт сметы по проекту</p>
             </div>
-            <div class="process-step animate-on-scroll">
+            <div class="process-step">
                 <div class="step-number">3</div>
                 <h3 class="step-title">Подготовка и заливка</h3>
                 <p class="step-desc">Устройство основания, укладка гидроизоляции, армирование, заливка бетона с вибрированием и затиркой</p>
             </div>
-            <div class="process-step animate-on-scroll">
+            <div class="process-step">
                 <div class="step-number">4</div>
                 <h3 class="step-title">Уход и сдача</h3>
                 <p class="step-desc">Нарезка деформационных швов. Приёмка с актом готовности</p>
@@ -3165,7 +2906,7 @@
 
     <!-- Photo Gallery Strip -->
     <section class="gallery" id="gallery">
-        <div class="section-header animate-on-scroll">
+        <div class="section-header">
             <span class="section-tag">Наши работы</span>
             <h2 class="section-title">Реализованные проекты</h2>
             <p class="section-desc">Примеры промышленных объектов, где мы устроили бетонные полы с гарантией качества</p>
@@ -3175,47 +2916,47 @@
                 <i class="fas fa-chevron-left"></i>
             </button>
             <div class="photo-strip" id="photoStrip">
-                <div class="strip-item animate-scale">
+                <div class="strip-item">
                     <img src="images/photo1.jpg" alt="Полированный бетон">
                     <div class="strip-caption">Печатный бетон — площадка под машино-место</div>
                 </div>
-                <div class="strip-item animate-scale">
+                <div class="strip-item">
                     <img src="images/photo2.jpg" alt="Печатный бетон">
                     <div class="strip-caption">Топпинговый пол — придомовой гараж</div>
                 </div>
-                <div class="strip-item animate-scale">
+                <div class="strip-item">
                     <img src="images/photo3.jpg" alt="Промышленный пол">
                     <div class="strip-caption">Печатный бетон — благоустройство</div>
                 </div>
-                <div class="strip-item animate-scale">
+                <div class="strip-item">
                     <img src="images/photo4.jpg" alt="Полированный бетон">
                     <div class="strip-caption">Промышленный пол</div>
                 </div>
-                <div class="strip-item animate-scale">
+                <div class="strip-item">
                     <img src="images/photo5.jpg" alt="Уличное бетонирование">
                     <div class="strip-caption">Полимерный пол с элементами краски</div>
                 </div>
-                <div class="strip-item animate-scale">
+                <div class="strip-item">
                     <img src="images/photo6.jpg" alt="Полированный бетон">
                     <div class="strip-caption">Промышленный пол — гараж</div>
                 </div>
-                <div class="strip-item animate-scale">
+                <div class="strip-item">
                     <img src="images/photo7.jpg" alt="Печатный бетон">
                     <div class="strip-caption">Топпинговый пол — защитный слой</div>
                 </div>
-                <div class="strip-item animate-scale">
+                <div class="strip-item">
                     <img src="images/photo8.jpg" alt="Печатный бетон">
                     <div class="strip-caption">Полимерный пол — коридор</div>
                 </div>
-                <div class="strip-item animate-scale">
+                <div class="strip-item">
                     <img src="images/photo9.jpg" alt="Промышленный пол">
                     <div class="strip-caption">Печатный бетон — двор</div>
                 </div>
-                <div class="strip-item animate-scale">
+                <div class="strip-item">
                     <img src="images/photo10.jpg" alt="Промышленный пол">
                     <div class="strip-caption">Печатный бетон — отмостка</div>
                 </div>
-                <div class="strip-item animate-scale">
+                <div class="strip-item">
                     <img src="images/photo11.jpg" alt="Печатный бетон">
                     <div class="strip-caption">Топпинговый пол — гараж</div>
                 </div>
@@ -3232,13 +2973,13 @@
 
     <!-- FAQ Section -->
     <section class="faq" id="faq">
-        <div class="section-header animate-on-scroll">
+        <div class="section-header">
             <span class="section-tag">Вопросы и ответы</span>
             <h2 class="section-title">Часто задаваемые вопросы</h2>
             <p class="section-desc">Отвечаем на самые популярные вопросы наших клиентов</p>
         </div>
         <div class="faq-container">
-            <div class="faq-item animate-on-scroll">
+            <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>Сколько времени сохнет бетонный пол?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
@@ -3247,7 +2988,7 @@
                     <p>Бетон набирает 70% прочности за 7 дней, полная прочность — через 28 дней. Ходить можно уже через 2-3 дня, а полноценная эксплуатация — через неделю. При использовании топпинга сроки могут отличаться.</p>
                 </div>
             </div>
-            <div class="faq-item animate-on-scroll">
+            <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>Какая гарантия на работы?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
@@ -3256,7 +2997,7 @@
                     <p>Мы предоставляем гарантию на все виды работ сроком от 2 до 5 лет в зависимости от типа покрытия. Гарантия распространяется на отслоение, трещины и другие дефекты, возникшие по нашей вине.</p>
                 </div>
             </div>
-            <div class="faq-item animate-on-scroll">
+            <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>Можно ли делать пол зимой?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
@@ -3265,7 +3006,7 @@
                     <p>Да, возможно! Мы используем противоморозные добавки и мобильные тепловые пушки для создания необходимого микроклимата. Зимние работы проводятся в помещениях или под укрытиями.</p>
                 </div>
             </div>
-            <div class="faq-item animate-on-scroll">
+            <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>Что лучше — топпинг или полимерное покрытие?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
@@ -3274,7 +3015,7 @@
                     <p>Топпинг (кварцевый/металлический) — лучше для промышленных помещений с высокими механическими нагрузками. Полимерное покрытие — для помещений с химическими воздействиями и требованиями к чистоте. Подберём оптимальный вариант под ваши задачи.</p>
                 </div>
             </div>
-            <div class="faq-item animate-on-scroll">
+            <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>Какой срок выполнения работ?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
@@ -3283,7 +3024,7 @@
                     <p>Срок зависит от площади и сложности объекта. Стандартный гараж (50 м²) — 3-5 дней. Склад 1000 м² — 2-3 недели. Точные сроки озвучиваем после бесплатного выезда на замер.</p>
                 </div>
             </div>
-            <div class="faq-item animate-on-scroll">
+            <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>Работаете ли вы с НДС?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
@@ -3299,12 +3040,12 @@
     <!-- CTA Section -->
         <!-- Cost Calculator Section -->
     <section class="calculator" id="calculator">
-        <div class="section-header animate-on-scroll">
+        <div class="section-header">
             <span class="section-tag">Калькулятор</span>
             <h2 class="section-title">Рассчитайте стоимость онлайн</h2>
             <p class="section-desc">Получите предварительную оценку стоимости работ за 1 минуту. Точный расчёт после выезда инженера.</p>
         </div>
-        <div class="calculator-container animate-on-scroll">
+        <div class="calculator-container">
             <div class="calc-form">
                 <div class="calc-row">
                     <div class="calc-group">
@@ -3390,12 +3131,12 @@
 
     <!-- Contact Form Section -->
     <section class="contact-form-section" id="contact-form">
-        <div class="section-header animate-on-scroll">
+        <div class="section-header">
             <span class="section-tag">Оставить заявку</span>
             <h2 class="section-title">Получите расчёт за 2 часа</h2>
             <p class="section-desc">Заполните форму — наш инженер свяжется с вами, уточнит детали и подготовит точную смету</p>
         </div>
-        <div class="contact-form-container animate-on-scroll">
+        <div class="contact-form-container">
             <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
                 <div class="form-row">
                     <div class="form-group">
@@ -3438,16 +3179,16 @@
 
 <section class="cta" id="contacts">
         <div class="cta-container">
-            <h2>Готовы начать?</h2>
-            <p>Оставьте заявку — наш инженер свяжется с вами</p>
-            <div class="cta-buttons">
-                <a href="#contact-form" class="btn-primary btn-cta-main" onclick="scrollToForm(event)">
-                    <i class="fas fa-paper-plane"></i> Оставить заявку
-                </a>
-                <a href="https://t.me/+79082701848" target="_blank" class="btn-social tg-link">
+            <h2>Получите расчёт стоимости за 2 часа</h2>
+            <p>Оставьте заявку — наш инженер свяжется с вами, уточнит детали и подготовит коммерческое предложение с точной сметой</p>
+            <a href="tel:+79082701848" class="cta-phone">
+                <i class="fas fa-phone"></i> +7 (908) 270-18-48
+            </a>
+            <div class="social-links-cta">
+                <a href="https://t.me/+79082701848" target="_blank" class="tg-link">
                     <i class="fab fa-telegram-plane"></i> Написать в Telegram
                 </a>
-                <a href="https://vk.com/permprompol" target="_blank" class="btn-social vk-link">
+                <a href="https://vk.com/permprompol" target="_blank" class="vk-link">
                     <i class="fab fa-vk"></i> Написать ВКонтакте
                 </a>
             </div>
@@ -3455,7 +3196,10 @@
     </section>
 
     <!-- Floating Call Button -->
-    
+    <a href="tel:+79082701848" class="floating-call-btn">
+        <i class="fas fa-phone"></i>
+        <span>Позвонить</span>
+    </a>
 
     <!-- Footer -->
     <footer>
@@ -3501,7 +3245,7 @@
             <div class="footer-column">
                 <h4>Контакты</h4>
                 <ul class="footer-links">
-                    
+                    <li><a href="tel:+79082701848"><i class="fas fa-phone" style="margin-right: 8px;"></i>+7 (908) 270-18-48</a></li>
                     <li><a href="mailto:info@permprompol.ru"><i class="fas fa-envelope" style="margin-right: 8px;"></i>info@permprompol.ru</a></li>
                     <li><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>г. Пермь</li>
                     <li><i class="fas fa-clock" style="margin-right: 8px;"></i>Пн-Пт: 10:00 — 20:00</li>
@@ -3517,14 +3261,17 @@
 
         // ===== MOBILE MENU =====
         function toggleMobileMenu() {
+            console.log('toggleMobileMenu called');
             const navLinks = document.getElementById('navLinks');
             const menuBtn = document.getElementById('mobileMenuBtn');
             const menuOverlay = document.getElementById('menuOverlay');
             const body = document.body;
 
             if (navLinks.classList.contains('active')) {
+                console.log('Menu is active, closing');
                 closeMobileMenu();
             } else {
+                console.log('Menu is inactive, opening');
                 navLinks.classList.add('active');
                 menuBtn.classList.add('active');
                 menuOverlay.classList.add('active');
@@ -3587,14 +3334,6 @@
                 top: 0,
                 behavior: 'smooth'
             });
-        }
-
-        function scrollToForm(e) {
-            e.preventDefault();
-            const form = document.getElementById('contact-form');
-            if (form) {
-                form.scrollIntoView({ behavior: 'smooth' });
-            }
         }
 
         // Active link highlighting based on scroll position

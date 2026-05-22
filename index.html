@@ -2853,9 +2853,81 @@
             }
         }
 
+    
+        /* ===== SCROLL REVEAL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.85);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+        .reveal-delay-6 { transition-delay: 0.6s; }
+
+        /* ===== SCROLL PROGRESS BAR ===== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--orange), var(--sky-blue));
+            z-index: 10001;
+            transition: width 0.1s ease;
+            box-shadow: 0 0 10px rgba(234, 88, 12, 0.5);
+        }
+
+        /* ===== COUNTER ANIMATION ===== */
+        .counter {
+            display: inline-block;
+        }
+
     </style>
 </head>
 <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
     <!-- ФОНОВОЕ ВИДЕО НА ВЕСЬ САЙТ -->
     <div class="site-video-bg">
         <video autoplay muted loop playsinline poster="https://i.postimg.cc/pVcBVWYn/P-20260518-030035-0000.png">
@@ -2869,6 +2941,7 @@
     <div class="menu-overlay" id="menuOverlay" onclick="closeMobileMenu()"></div>
 
     <!-- Navigation -->
+    <div class="scroll-progress" id="scrollProgress"></div>
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
@@ -2928,14 +3001,14 @@
     </section>
 
     <!-- Stats Bar -->
-    <div class="stats-bar">
+    <div class="stats-bar reveal">
         <div class="stats-container">
             <div class="stat-item">
-                <div class="stat-number">10+</div>
+                <div class="stat-number"><span class="counter" data-target="10">0</span>+</div>
                 <div class="stat-label">Лет работы</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">100+</div>
+                <div class="stat-number"><span class="counter" data-target="100">0</span>+</div>
                 <div class="stat-label">Реализованных объектов</div>
             </div>
             <div class="stat-item" style="white-space: nowrap;">
@@ -2943,7 +3016,7 @@
                 <div class="stat-label" style="white-space: nowrap;">м² залито бетона</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">98%</div>
+                <div class="stat-number"><span class="counter" data-target="98">0</span>%</div>
                 <div class="stat-label">Довольных клиентов</div>
             </div>
         </div>
@@ -2952,62 +3025,62 @@
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <div class="section-header">
+        <div class="section-header reveal">
             <span class="section-tag">Наши услуги</span>
             <h2 class="section-title">Полный спектр работ по бетонным полам</h2>
             <p class="section-desc">Выполняем все этапы — от проектирования до финишной отделки промышленных полов любой сложности</p>
         </div>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card reveal reveal-delay-1">
                 <div class="service-icon">
                     <i class="fas fa-industry"></i>
                 </div>
                 <h3 class="service-title">Промышленные полы</h3>
                 <p class="service-desc">Устройство бетонных полов для заводов, цехов и производственных площадок с учётом нагрузок от оборудования и погрузчиков</p>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal reveal-delay-2">
                 <div class="service-icon">
                     <i class="fas fa-warehouse"></i>
                 </div>
                 <h3 class="service-title">Складские полы</h3>
                 <p class="service-desc">Бетонирование полов под высокие стеллажные нагрузки. Упрочнение топпингом и армирование волокном для долговечности</p>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal reveal-delay-3">
                 <div class="service-icon">
                     <i class="fas fa-car"></i>
                 </div>
                 <h3 class="service-title">Полы для СТО и паркингов</h3>
                 <p class="service-desc">Химически стойкие покрытия для автосервисов, моек и подземных паркингов с дренажными системами</p>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal reveal-delay-4">
                 <div class="service-icon">
                     <i class="fas fa-snowflake"></i>
                 </div>
                 <h3 class="service-title">Холодильные камеры</h3>
                 <p class="service-desc">Специальные бетонные полы с термоусадочными швами для морозильных складов и холодильных комплексов</p>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal reveal-delay-5">
                 <div class="service-icon">
                     <i class="fas fa-star"></i>
                 </div>
                 <h3 class="service-title">Топпинг и полировка</h3>
                 <p class="service-desc">Упрочнение поверхности кварцевым или металлическим топпингом. Полировка для получения зеркального блеска</p>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal reveal-delay-6">
                 <div class="service-icon">
                     <i class="fas fa-flask"></i>
                 </div>
                 <h3 class="service-title">Полимерные полы</h3>
                 <p class="service-desc">Наливные полимерные покрытия для помещений с повышенными требованиями к чистоте и химической стойкости</p>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal reveal-delay-1">
                 <div class="service-icon">
                     <i class="fas fa-paint-roller"></i>
                 </div>
                 <h3 class="service-title">Печатный бетон</h3>
                 <p class="service-desc">Декоративный бетон с текстурой камня, кирпича или дерева. Идеален для ландшафтного дизайна и тротуаров</p>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal reveal-delay-2">
                 <div class="service-icon">
                     <i class="fas fa-home"></i>
                 </div>
@@ -3020,14 +3093,14 @@
     <!-- About Section с ВИДЕО -->
     <section class="about" id="about">
         <div class="about-container">
-            <div class="about-visual">
+            <div class="about-visual reveal reveal-left">
                 <div class="about-video-wrapper">
                     <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
                         <source src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompol-site/main/video/lv_0_20260518175515%5B1%5D.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
-            <div class="about-content">
+            <div class="about-content reveal reveal-right">
                 <h2>Почему именно мы?</h2>
                 <p>Мы — пермская компания с <strong>10-летним опытом</strong> в сфере промышленных бетонных полов. За это время реализовали более 100 проектов от небольших СТО до крупных логистических центров.</p>
                 <p>Используем только сертифицированные материалы от ведущих производителей. Контролируем качество и сроки на каждом этапе.</p>
@@ -3064,28 +3137,28 @@
 
     <!-- Process Section -->
     <section class="process" id="process">
-        <div class="section-header">
+        <div class="section-header reveal">
             <span class="section-tag">Как мы работаем</span>
             <h2 class="section-title">4 этапа до готового пола</h2>
             <p class="section-desc">Прозрачный процесс работы с фиксированными сроками и контролем качества на каждом шаге</p>
         </div>
         <div class="process-steps">
-            <div class="process-step">
+            <div class="process-step reveal reveal-delay-1">
                 <div class="step-number">1</div>
                 <h3 class="step-title">Заявка и замер</h3>
                 <p class="step-desc">Бесплатный выезд инженера на объект в Перми и области. Оценка состояния основания, замеры, фотофиксация</p>
             </div>
-            <div class="process-step">
+            <div class="process-step reveal reveal-delay-2">
                 <div class="step-number">2</div>
                 <h3 class="step-title">Проект и смета</h3>
                 <p class="step-desc">Расчёт сметы по проекту</p>
             </div>
-            <div class="process-step">
+            <div class="process-step reveal reveal-delay-3">
                 <div class="step-number">3</div>
                 <h3 class="step-title">Подготовка и заливка</h3>
                 <p class="step-desc">Устройство основания, укладка гидроизоляции, армирование, заливка бетона с вибрированием и затиркой</p>
             </div>
-            <div class="process-step">
+            <div class="process-step reveal reveal-delay-4">
                 <div class="step-number">4</div>
                 <h3 class="step-title">Уход и сдача</h3>
                 <p class="step-desc">Нарезка деформационных швов. Приёмка с актом готовности</p>
@@ -3095,12 +3168,12 @@
 
     <!-- Photo Gallery Strip -->
     <section class="gallery" id="gallery">
-        <div class="section-header">
+        <div class="section-header reveal">
             <span class="section-tag">Наши работы</span>
             <h2 class="section-title">Реализованные проекты</h2>
             <p class="section-desc">Примеры промышленных объектов, где мы устроили бетонные полы с гарантией качества</p>
         </div>
-        <div class="photo-strip-container">
+        <div class="photo-strip-container reveal">
             <button class="strip-btn strip-prev" onclick="scrollStrip(-1)">
                 <i class="fas fa-chevron-left"></i>
             </button>
@@ -3162,7 +3235,7 @@
 
     <!-- FAQ Section -->
     <section class="faq" id="faq">
-        <div class="section-header">
+        <div class="section-header reveal">
             <span class="section-tag">Вопросы и ответы</span>
             <h2 class="section-title">Часто задаваемые вопросы</h2>
             <p class="section-desc">Отвечаем на самые популярные вопросы наших клиентов</p>
@@ -3229,12 +3302,12 @@
     <!-- CTA Section -->
         <!-- Cost Calculator Section -->
     <section class="calculator" id="calculator">
-        <div class="section-header">
+        <div class="section-header reveal">
             <span class="section-tag">Калькулятор</span>
             <h2 class="section-title">Рассчитайте стоимость онлайн</h2>
             <p class="section-desc">Получите предварительную оценку стоимости работ за 1 минуту. Точный расчёт после выезда инженера.</p>
         </div>
-        <div class="calculator-container">
+        <div class="calculator-container reveal">
             <div class="calc-form">
                 <div class="calc-row">
                     <div class="calc-group">
@@ -3320,12 +3393,12 @@
 
     <!-- Contact Form Section -->
     <section class="contact-form-section" id="contact-form">
-        <div class="section-header">
+        <div class="section-header reveal">
             <span class="section-tag">Оставить заявку</span>
             <h2 class="section-title">ГОТОВЫ НАЧАТЬ?</h2>
             <p class="section-desc">Заполните форму — наш инженер свяжется с вами, уточнит детали и подготовит точную смету</p>
         </div>
-        <div class="contact-form-container">
+        <div class="contact-form-container reveal">
             <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
                 <div class="form-row">
                     <div class="form-group">
@@ -3939,6 +4012,109 @@
                 }, 300);
             }, 2500);
         }
+
+
+        
+        // ===== SCROLL REVEAL =====
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ===== SCROLL PROGRESS BAR =====
+        const scrollProgress = document.getElementById('scrollProgress');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // ===== COUNTER ANIMATION =====
+        const counters = document.querySelectorAll('.counter');
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000; // 2 seconds
+                    const step = target / (duration / 16); // 60fps
+                    let current = 0;
+
+                    const updateCounter = () => {
+                        current += step;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current).toLocaleString('ru-RU');
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target.toLocaleString('ru-RU');
+                        }
+                    };
+
+                    updateCounter();
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        counters.forEach(counter => counterObserver.observe(counter));
+
+
+        
+        // ===== SCROLL REVEAL ANIMATIONS =====
+        function initScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Unobserve after animation
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            reveals.forEach(el => observer.observe(el));
+        }
+
+
+
+        // ===== SCROLL PROGRESS BAR =====
+        function initScrollProgress() {
+            const progressBar = document.getElementById('scrollProgress');
+            if (!progressBar) return;
+
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = (scrollTop / docHeight) * 100;
+                progressBar.style.width = progress + '%';
+            });
+        }
+
+        // Initialize all animations
+        initScrollReveal();
+        
+        initScrollProgress();
 
 
         // FAQ Toggle

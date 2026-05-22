@@ -154,16 +154,11 @@
             align-items: center;
             gap: 14px;
             text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 16px;
+            padding: 8px 0;
             transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .logo:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(125, 211, 252, 0.3);
             transform: translateY(-2px);
         }
         
@@ -291,7 +286,7 @@
         .hero-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 40px 20px 60px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -329,8 +324,8 @@
         
         .hero-features {
             display: flex;
-            gap: 30px;
-            margin-bottom: 40px;
+            gap: 15px;
+            margin-bottom: 25px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -365,7 +360,7 @@
         
         .hero-buttons {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -558,10 +553,13 @@
         }
         
         .service-title {
-            font-size: 1.4rem;
+            font-size: clamp(0.85rem, 2vw, 1.15rem);
             color: var(--white);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 600;
+            line-height: 1.25;
+            word-break: keep-all;
+            overflow-wrap: break-word;
         }
         
         .service-desc {
@@ -1240,8 +1238,11 @@
             }
 
             .service-title {
-                font-size: 1rem;
+                font-size: clamp(0.8rem, 3.5vw, 0.95rem);
                 margin-bottom: 8px;
+                line-height: 1.2;
+                word-break: keep-all;
+                overflow-wrap: break-word;
             }
 
             .service-desc {
@@ -2937,9 +2938,9 @@
                 <div class="stat-number">100+</div>
                 <div class="stat-label">Реализованных объектов</div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">50 000+</div>
-                <div class="stat-label">м² залито бетона</div>
+            <div class="stat-item" style="white-space: nowrap;">
+                <div class="stat-number" style="white-space: nowrap;">50 000+</div>
+                <div class="stat-label" style="white-space: nowrap;">м² залито бетона</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">98%</div>

@@ -2490,6 +2490,20 @@
             color: var(--sky-blue);
         }
 
+        .swipe-hint-badge {
+            display: inline-block;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(125, 211, 252, 0.3);
+            border-radius: 30px;
+            padding: 10px 24px;
+            color: var(--gray);
+            font-family: 'PT Sans', sans-serif;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
         @keyframes swipeHintPulse {
             0%, 100% { opacity: 0.5; }
             50% { opacity: 1; }
@@ -2734,24 +2748,64 @@
             letter-spacing: 1px;
         }
 
-        /* Exit modal specific */
-        .exit-modal .modal-title {
-            font-size: 1.5rem;
+        .promo-timer {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
         }
 
-        .exit-buttons {
+        .timer-label {
+            font-family: 'PT Sans', sans-serif;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timer-digits {
             display: flex;
-            gap: 15px;
-            margin-top: 25px;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 8px;
         }
 
-        .exit-buttons .btn-primary,
-        .exit-buttons .btn-secondary {
-            flex: 1;
-            justify-content: center;
-            padding: 14px 20px;
-            font-size: 1rem;
+        .timer-digit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 50px;
         }
+
+        .timer-digit span:first-child {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--orange);
+            line-height: 1;
+            text-shadow: 0 0 20px rgba(234, 88, 12, 0.3);
+        }
+
+        .timer-digit small {
+            font-family: 'PT Sans', sans-serif;
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: 4px;
+            text-transform: lowercase;
+        }
+
+        .timer-sep {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gray-dark);
+            line-height: 1;
+            padding-bottom: 18px;
+        }
+
 
         @media (max-width: 768px) {
             .modal-window {
@@ -3141,7 +3195,7 @@
             </button>
         </div>
         <div class="swipe-hint" style="text-align: center; width: 100%;">
-            <i class="fas fa-hand-pointer"></i> Свайпайте влево/вправо <i class="fas fa-arrows-alt-h"></i>
+            <span class="swipe-hint-badge"><i class="fas fa-hand-pointer"></i> Свайпайте влево/вправо <i class="fas fa-arrows-alt-h"></i></span>
         </div>
     </section>
     <div class="section-divider"></div>
@@ -3231,37 +3285,9 @@
                         <label for="calc-type">Тип покрытия</label>
                         <select id="calc-type">
                             <option value="">Выберите тип</option>
-                            <option value="industrial">Промышленный бетонный пол</option>
-                            <option value="warehouse">Складской пол с топпингом</option>
+                            <option value="topping">Топпинговое покрытие</option>
                             <option value="polymer">Полимерное покрытие</option>
                             <option value="stamped">Печатный бетон</option>
-                            <option value="polished">Полированный бетон</option>
-                            <option value="garage">Пол в гараж / СТО</option>
-                            <option value="outdoor">Придомовая территория</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="calc-row">
-                    <div class="calc-group">
-                        <label for="calc-thickness">Толщина слоя, см</label>
-                        <select id="calc-thickness">
-                            <option value="">Выберите толщину</option>
-                            <option value="5">5 см</option>
-                            <option value="8">8 см</option>
-                            <option value="10">10 см</option>
-                            <option value="12">12 см</option>
-                            <option value="15">15 см</option>
-                            <option value="20">20 см +</option>
-                        </select>
-                    </div>
-                    <div class="calc-group">
-                        <label for="calc-reinforcement">Армирование</label>
-                        <select id="calc-reinforcement">
-                            <option value="">Выберите тип</option>
-                            <option value="none">Без армирования</option>
-                            <option value="mesh">Сетка (100×100)</option>
-                            <option value="rebar">Арматура (12 мм)</option>
-                            <option value="fiber">Полипропиленовое волокно</option>
                         </select>
                     </div>
                 </div>
@@ -3270,19 +3296,14 @@
                         <label>Дополнительные опции</label>
                         <div class="calc-checkboxes">
                             <label class="calc-checkbox">
-                                <input type="checkbox" id="opt-topping" value="topping">
-                                <span class="checkmark"></span>
-                                <span class="check-label">Топпинг (упрочнение)</span>
-                            </label>
-                            <label class="calc-checkbox">
                                 <input type="checkbox" id="opt-cuts" value="cuts">
                                 <span class="checkmark"></span>
                                 <span class="check-label">Нарезка деформационных швов</span>
                             </label>
                             <label class="calc-checkbox">
-                                <input type="checkbox" id="opt-heating" value="heating">
+                                <input type="checkbox" id="opt-sealant" value="sealant">
                                 <span class="checkmark"></span>
-                                <span class="check-label">Противоморозная добавка</span>
+                                <span class="check-label">Заполнение герметиком деформационных швов</span>
                             </label>
                         </div>
                     </div>
@@ -3672,68 +3693,65 @@
         function calculateCost() {
             const area = parseFloat(document.getElementById('calc-area').value) || 0;
             const type = document.getElementById('calc-type').value;
-            const thickness = parseFloat(document.getElementById('calc-thickness').value) || 0;
-            const reinforcement = document.getElementById('calc-reinforcement').value;
-            const hasTopping = document.getElementById('opt-topping').checked;
             const hasCuts = document.getElementById('opt-cuts').checked;
-            const hasHeating = document.getElementById('opt-heating').checked;
+            const hasSealant = document.getElementById('opt-sealant').checked;
 
-            if (!area || !type || !thickness) {
-                alert('Пожалуйста, заполните обязательные поля: площадь, тип покрытия и толщину');
+            if (!area || !type) {
+                alert('Пожалуйста, заполните площадь и выберите тип покрытия');
                 return;
             }
 
-            // Base prices per m² (approximate for Perm region)
-            const basePrices = {
-                'industrial': 2500,
-                'warehouse': 3200,
-                'polymer': 4500,
-                'stamped': 3800,
-                'polished': 4000,
-                'garage': 2800,
-                'outdoor': 2200
-            };
+            // Цены зависят от площади
+            function getPriceByArea(type, area) {
+                const prices = {
+                    'topping': [
+                        { max: 100, price: 1500 },
+                        { max: 300, price: 1200 },
+                        { max: 500, price: 1000 },
+                        { max: Infinity, price: 800 }
+                    ],
+                    'polymer': [
+                        { max: 100, price: 2000 },
+                        { max: 300, price: 1600 },
+                        { max: 500, price: 1200 },
+                        { max: Infinity, price: 800 }
+                    ],
+                    'stamped': [
+                        { max: 100, price: 2000 },
+                        { max: 300, price: 1600 },
+                        { max: 500, price: 1200 },
+                        { max: Infinity, price: 800 }
+                    ]
+                };
 
-            // Thickness multiplier
-            const thicknessMultiplier = thickness / 10; // base is 10cm
+                const tier = prices[type].find(t => area <= t.max);
+                return tier ? tier.price : 0;
+            }
 
-            // Reinforcement prices per m²
-            const reinforcementPrices = {
-                'none': 0,
-                'mesh': 150,
-                'rebar': 300,
-                'fiber': 200
-            };
+            const basePrice = getPriceByArea(type, area);
+            const baseCost = area * basePrice;
 
-            // Option prices per m²
+            // Доп. опции
             const optionPrices = {
-                'topping': 400,
                 'cuts': 100,
-                'heating': 250
+                'sealant': 100
             };
 
-            // Calculate
-            const basePrice = basePrices[type] || 2500;
-            const baseCost = area * basePrice * thicknessMultiplier;
-            const reinforcementCost = area * (reinforcementPrices[reinforcement] || 0);
-            const toppingCost = hasTopping ? area * optionPrices['topping'] : 0;
             const cutsCost = hasCuts ? area * optionPrices['cuts'] : 0;
-            const heatingCost = hasHeating ? area * optionPrices['heating'] : 0;
+            const sealantCost = hasSealant ? area * optionPrices['sealant'] : 0;
 
-            const totalCost = baseCost + reinforcementCost + toppingCost + cutsCost + heatingCost;
+            const totalCost = baseCost + cutsCost + sealantCost;
+
+            // Названия типов
+            const typeNames = {
+                'topping': 'Топпинговое покрытие',
+                'polymer': 'Полимерное покрытие',
+                'stamped': 'Печатный бетон'
+            };
+
+            // Диапазон цен (±15%)
             const minCost = totalCost * 0.85;
             const maxCost = totalCost * 1.15;
-
-            // Get type name
-            const typeNames = {
-                'industrial': 'Промышленный пол',
-                'warehouse': 'Складской пол',
-                'polymer': 'Полимерное покрытие',
-                'stamped': 'Печатный бетон',
-                'polished': 'Полированный бетон',
-                'garage': 'Пол в гараж/СТО',
-                'outdoor': 'Придомовая территория'
-            };
 
             // Generate result HTML
             const resultHTML = `
@@ -3744,27 +3762,17 @@
                     <div class="calc-breakdown">
                         <div class="calc-breakdown-item">
                             <span>${typeNames[type]}</span>
-                            <span>${formatPrice(baseCost)} ₽</span>
+                            <span>${formatPrice(baseCost)} ₽ (${formatPrice(basePrice)} ₽/м²)</span>
                         </div>
-                        ${reinforcementCost > 0 ? `
-                        <div class="calc-breakdown-item">
-                            <span>Армирование</span>
-                            <span>${formatPrice(reinforcementCost)} ₽</span>
-                        </div>` : ''}
-                        ${toppingCost > 0 ? `
-                        <div class="calc-breakdown-item">
-                            <span>Топпинг</span>
-                            <span>${formatPrice(toppingCost)} ₽</span>
-                        </div>` : ''}
                         ${cutsCost > 0 ? `
                         <div class="calc-breakdown-item">
-                            <span>Нарезка швов</span>
+                            <span>Нарезка деформационных швов</span>
                             <span>${formatPrice(cutsCost)} ₽</span>
                         </div>` : ''}
-                        ${heatingCost > 0 ? `
+                        ${sealantCost > 0 ? `
                         <div class="calc-breakdown-item">
-                            <span>Противоморозная добавка</span>
-                            <span>${formatPrice(heatingCost)} ₽</span>
+                            <span>Заполнение герметиком швов</span>
+                            <span>${formatPrice(sealantCost)} ₽</span>
                         </div>` : ''}
                         <div class="calc-breakdown-item calc-total-item">
                             <span>ИТОГО</span>
@@ -3861,22 +3869,14 @@
             }
         });
 
-        // Promo modal - show once per session after 5 seconds
+        // Promo modal - show once per session after 60 seconds
         setTimeout(() => {
             if (!sessionStorage.getItem('promoShown')) {
                 openModal('modalPromo');
                 sessionStorage.setItem('promoShown', 'true');
             }
-        }, 5000);
+        }, 60000);
 
-        // Exit intent modal
-        let exitShown = false;
-        document.addEventListener('mouseleave', (e) => {
-            if (e.clientY < 0 && !exitShown && !document.querySelector('.modal-overlay.active')) {
-                openModal('modalExit');
-                exitShown = true;
-            }
-        });
 
         // Modal form submission
         function submitModalForm(event) {
@@ -3999,10 +3999,44 @@
             });
         }
 
+        // ===== PROMO TIMER =====
+        function initPromoTimer() {
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 7); // Акция 7 дней
+            endDate.setHours(23, 59, 59, 999);
+
+            function updateTimer() {
+                const now = new Date();
+                const diff = endDate - now;
+
+                if (diff <= 0) {
+                    document.getElementById('timerDays').textContent = '00';
+                    document.getElementById('timerHours').textContent = '00';
+                    document.getElementById('timerMinutes').textContent = '00';
+                    document.getElementById('timerSeconds').textContent = '00';
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('timerDays').textContent = String(days).padStart(2, '0');
+                document.getElementById('timerHours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('timerMinutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('timerSeconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
         // Initialize all animations
         initScrollReveal();
 
         initScrollProgress();
+        initPromoTimer();
 
 
         // FAQ Toggle
@@ -4085,6 +4119,18 @@
             </div>
             <h3 class="modal-title" id="modalPromoTitle">Скидка 10% на все работы</h3>
             <p class="modal-subtitle">Оставьте заявку до конца месяца и получите скидку 10% на устройство бетонного пола любой сложности</p>
+            <div class="promo-timer">
+                <div class="timer-label">До конца акции:</div>
+                <div class="timer-digits" id="promoTimer">
+                    <span class="timer-digit"><span id="timerDays">00</span><small>дн</small></span>
+                    <span class="timer-sep">:</span>
+                    <span class="timer-digit"><span id="timerHours">00</span><small>час</small></span>
+                    <span class="timer-sep">:</span>
+                    <span class="timer-digit"><span id="timerMinutes">00</span><small>мин</small></span>
+                    <span class="timer-sep">:</span>
+                    <span class="timer-digit"><span id="timerSeconds">00</span><small>сек</small></span>
+                </div>
+            </div>
             <div style="display: flex; gap: 15px; margin-top: 25px;">
                 <a href="#" class="btn-primary" style="flex: 1; justify-content: center;" onclick="event.preventDefault(); closeModal('modalPromo'); openModal('modalApplication');">
                     <i class="fas fa-paper-plane"></i> Получить скидку

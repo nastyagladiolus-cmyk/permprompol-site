@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ПермПромПол — устройство промышленных бетонных полов в Перми и Пермском крае. Склады, производства, СТО, паркинги, придомовые территории. 10+ лет опыта, 100+ объектов.">
     <title>ПермПромПол — Пермский Профессиональный Подход | Промышленные бетонные полы</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta property="og:title" content="ПермПромПол — Промышленные бетонные полы в Перми">
+    <meta property="og:description" content="Устройство бетонных полов любой сложности. Склады, производства, СТО, паркинги. Бесплатный выезд инженера.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.postimg.cc/pVcBVWYn/P-20260518-030035-0000.png">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --white: #ffffff;
             --orange: #f97316;
@@ -30,7 +36,7 @@
             --gray-dark: #94a3b8;
             --concrete: #e2e8f0;
         }
-        
+
         body {
             font-family: 'PT Sans', sans-serif;
             color: var(--navy);
@@ -71,13 +77,13 @@
         .calc-disclaimer {
             color: #94a3b8 !important;
         }
-        
+
         h1, h2, h3, .section-title, .stat-number, .step-number, .cta-phone {
             font-family: 'Poppins', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         /* ===== ФОНОВОЕ ВИДЕО НА ВЕСЬ САЙТ ===== */
         .site-video-bg {
             position: fixed;
@@ -87,14 +93,14 @@
             height: 100%;
             z-index: -2;
         }
-        
+
         .site-video-bg video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
-        
+
         .site-video-overlay {
             position: fixed;
             top: 0;
@@ -104,7 +110,7 @@
             background: rgba(15, 23, 42, 0.65);
             z-index: -1;
         }
-        
+
         /* Navigation — прозрачная шапка */
         nav {
             background: transparent;
@@ -133,7 +139,7 @@
             text-shadow: 0 1px 3px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
         }
-        
+
         
         .nav-container {
             width: 100%;
@@ -148,7 +154,7 @@
         .mobile-menu-btn {
             display: none;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
@@ -161,7 +167,7 @@
         .logo:hover {
             transform: translateY(-2px);
         }
-        
+
         .logo img {
             height: 70px;
             width: 70px;
@@ -179,11 +185,7 @@
             border-color: rgba(125, 211, 252, 0.5);
         }
 
-        .logo:hover img {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(125, 211, 252, 0.4);
-        }
-        
+
         .logo-text {
             display: flex;
             flex-direction: column;
@@ -195,7 +197,7 @@
             text-shadow: 0 0 30px rgba(125, 211, 252, 0.5), 0 2px 4px rgba(0,0,0,0.3);
             color: var(--sky-blue);
         }
-        
+
         .logo-main {
             font-family: 'Poppins', sans-serif;
             font-size: clamp(1.8rem, 2.2vw, 2.4rem);
@@ -212,7 +214,7 @@
             color: var(--sky-blue);
             text-shadow: 0 0 30px rgba(125, 211, 252, 0.6);
         }
-        
+
         .logo-sub {
             font-family: 'PT Sans', sans-serif;
             font-size: 0.7rem;
@@ -228,7 +230,7 @@
             color: var(--sky-blue);
             opacity: 1;
         }
-        
+
         .nav-links {
             display: flex;
             gap: clamp(25px, 3vw, 50px);
@@ -236,7 +238,7 @@
             white-space: nowrap;
             align-items: center;
         }
-        
+
         .nav-links a {
             font-family: 'PT Sans', sans-serif;
             text-decoration: none;
@@ -249,11 +251,11 @@
             white-space: nowrap;
             flex-shrink: 0;
         }
-        
+
         .nav-links a:hover {
             color: var(--sky-blue);
         }
-        
+
         .phone-btn {
             background: linear-gradient(135deg, var(--orange-dark), var(--orange));
             color: white;
@@ -268,12 +270,12 @@
             white-space: nowrap;
             flex-shrink: 0;
         }
-        
+
         .phone-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(234, 88, 12, 0.3);
         }
-        
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -282,7 +284,7 @@
             position: relative;
             padding-top: 80px;
         }
-        
+
         .hero-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -294,11 +296,11 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .hero-content {
             max-width: 800px;
         }
-        
+
         .hero-content h1 {
             font-size: 3.5rem;
             color: var(--white);
@@ -306,11 +308,11 @@
             margin-bottom: 25px;
             font-weight: 700;
         }
-        
+
         .hero-content h1 span {
             color: var(--sky-blue);
         }
-        
+
         .hero-subtitle {
             font-family: 'PT Sans', sans-serif;
             font-size: 1.2rem;
@@ -321,7 +323,7 @@
             max-width: 100%;
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
         }
-        
+
         .hero-features {
             display: flex;
             gap: 15px;
@@ -329,7 +331,7 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         .hero-feature {
             display: flex;
             align-items: center;
@@ -339,7 +341,7 @@
             font-size: 0.95rem;
             text-transform: none;
         }
-        
+
         .hero-feature-icon {
             width: 44px;
             height: 44px;
@@ -357,14 +359,14 @@
         .hero-feature:hover .hero-feature-icon {
             transform: scale(1.1) rotate(5deg);
         }
-        
+
         .hero-buttons {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
             justify-content: center;
         }
-        
+
         .btn-primary {
             background: linear-gradient(135deg, var(--orange-dark), var(--orange));
             color: white;
@@ -382,12 +384,12 @@
             border: none;
             cursor: pointer;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(234, 88, 12, 0.4);
         }
-        
+
         .btn-secondary {
             background: transparent;
             color: var(--white);
@@ -404,12 +406,12 @@
             align-items: center;
             gap: 10px;
         }
-        
+
         .btn-secondary:hover {
             background: rgba(255,255,255,0.1);
             border-color: var(--sky-blue);
         }
-        
+
         /* Stats Bar — стеклянный эффект */
         .stats-bar {
             background: rgba(255, 255, 255, 0.05);
@@ -419,7 +421,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .stats-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -428,38 +430,38 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 40px;
         }
-        
+
         .stat-item {
             text-align: center;
             padding: 20px;
         }
-        
+
         .stat-number {
             font-size: 2.8rem;
             font-weight: 700;
             color: var(--sky-blue);
             margin-bottom: 8px;
         }
-        
+
         .stat-label {
             font-family: 'PT Sans', sans-serif;
             color: var(--gray);
             font-size: 0.95rem;
             text-transform: none;
         }
-        
+
         /* Services Section — стеклянные карточки */
         .services {
             padding: 100px 0;
             background: transparent;
         }
-        
+
         .section-header {
             text-align: center;
             max-width: 600px;
             margin: 0 auto 60px;
         }
-        
+
         .section-tag {
             display: inline-block;
             background: rgba(125, 211, 252, 0.2);
@@ -473,14 +475,14 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
+
         .section-title {
             font-size: 2.8rem;
             color: var(--white);
             margin-bottom: 20px;
             font-weight: 700;
         }
-        
+
         .section-desc {
             font-family: 'PT Sans', sans-serif;
             color: #e2e8f0;
@@ -489,7 +491,7 @@
             line-height: 1.6;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
-        
+
         .services-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -498,7 +500,7 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
-        
+
         .service-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -510,14 +512,14 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .service-card:hover {
             transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.1);
             border-color: var(--sky-blue);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
         }
-        
+
         .service-card::before {
             content: '';
             position: absolute;
@@ -529,11 +531,11 @@
             transform: scaleX(0);
             transition: transform 0.4s;
         }
-        
+
         .service-card:hover::before {
             transform: scaleX(1);
         }
-        
+
         .service-icon {
             width: 70px;
             height: 70px;
@@ -547,11 +549,11 @@
             margin-bottom: 25px;
             transition: transform 0.3s;
         }
-        
+
         .service-card:hover .service-icon {
             transform: scale(1.1) rotate(5deg);
         }
-        
+
         .service-title {
             font-size: clamp(0.85rem, 2vw, 1.15rem);
             color: var(--white);
@@ -561,7 +563,7 @@
             word-break: keep-all;
             overflow-wrap: break-word;
         }
-        
+
         .service-desc {
             font-family: 'PT Sans', sans-serif;
             color: #cbd5e1;
@@ -570,13 +572,13 @@
             text-transform: none;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
-        
+
         /* About Section */
         .about {
             padding: 100px 0;
             background: transparent;
         }
-        
+
         .about-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -592,7 +594,7 @@
             max-width: 400px;
             width: 100%;
         }
-        
+
         .about-visual {
             position: relative;
             height: 400px;
@@ -600,27 +602,27 @@
             overflow: hidden;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
         }
-        
+
         .about-video-wrapper {
             position: relative;
             width: 100%;
             height: 100%;
         }
-        
+
         .about-video-wrapper video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
-        
+
         .about-content h2 {
             font-size: 2.8rem;
             color: var(--white);
             margin-bottom: 25px;
             font-weight: 700;
         }
-        
+
         .about-content p {
             font-family: 'PT Sans', sans-serif;
             color: #e2e8f0;
@@ -630,7 +632,7 @@
             text-transform: none;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
-        
+
         .about-features {
             margin-top: 30px;
             display: grid;
@@ -638,7 +640,7 @@
             gap: 20px;
             width: 100%;
         }
-        
+
         .about-feature {
             display: flex;
             align-items: center;
@@ -659,7 +661,7 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
-        
+
         .about-feature-icon {
             width: 44px;
             height: 44px;
@@ -677,7 +679,7 @@
         .about-feature:hover .about-feature-icon {
             transform: scale(1.1) rotate(5deg);
         }
-        
+
         .about-feature-text {
             font-family: 'PT Sans', sans-serif;
             font-weight: 500;
@@ -685,26 +687,26 @@
             font-size: 0.95rem;
             text-transform: none;
         }
-        
+
         /* Process Section */
         .process {
             padding: 100px 0;
             background: transparent;
         }
-        
+
         .process .section-tag {
             background: rgba(125, 211, 252, 0.2);
             color: var(--sky-blue);
         }
-        
+
         .process .section-title {
             color: var(--white);
         }
-        
+
         .process .section-desc {
             color: var(--gray);
         }
-        
+
         .process-steps {
             max-width: 1200px;
             margin: 60px auto 0;
@@ -713,12 +715,12 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 30px;
         }
-        
+
         .process-step {
             text-align: center;
             position: relative;
         }
-        
+
         .process-step:not(:last-child)::after {
             content: '→';
             position: absolute;
@@ -728,7 +730,7 @@
             font-size: 1.5rem;
             opacity: 0.5;
         }
-        
+
         .step-number {
             width: 80px;
             height: 80px;
@@ -743,14 +745,14 @@
             color: white;
             box-shadow: 0 10px 30px rgba(234, 88, 12, 0.3);
         }
-        
+
         .step-title {
             color: var(--white);
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 12px;
         }
-        
+
         .step-desc {
             font-family: 'PT Sans', sans-serif;
             color: #cbd5e1;
@@ -759,13 +761,13 @@
             text-transform: none;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
-        
+
         /* Projects Section */
         .projects {
             padding: 100px 0;
             background: transparent;
         }
-        
+
         .projects-grid {
             max-width: 1200px;
             margin: 60px auto 0;
@@ -774,7 +776,7 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
-        
+
         .project-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -784,13 +786,13 @@
             transition: all 0.4s;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .project-card:hover {
             transform: translateY(-8px);
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-        
+
         .project-image {
             height: 220px;
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(125, 211, 252, 0.2));
@@ -802,7 +804,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .project-image::before {
             content: '';
             position: absolute;
@@ -812,7 +814,7 @@
             bottom: 0;
             background: linear-gradient(180deg, transparent 50%, rgba(15, 23, 42, 0.9));
         }
-        
+
         .project-badge {
             position: absolute;
             top: 20px;
@@ -826,25 +828,25 @@
             font-weight: 500;
             z-index: 2;
         }
-        
+
         .project-info {
             padding: 25px;
         }
-        
+
         .project-title {
             font-size: 1.3rem;
             color: var(--white);
             font-weight: 600;
             margin-bottom: 10px;
         }
-        
+
         .project-meta {
             display: flex;
             gap: 20px;
             color: var(--gray);
             font-size: 0.9rem;
         }
-        
+
         .project-meta span {
             font-family: 'PT Sans', sans-serif;
             display: flex;
@@ -852,7 +854,7 @@
             gap: 6px;
             text-transform: none;
         }
-        
+
         /* CTA Section */
         .cta {
             padding: 100px 0;
@@ -861,7 +863,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .cta-container {
             max-width: 700px;
             margin: 0 auto;
@@ -869,14 +871,14 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .cta h2 {
             font-size: 3rem;
             color: var(--white);
             margin-bottom: 20px;
             font-weight: 700;
         }
-        
+
         .cta p {
             font-family: 'PT Sans', sans-serif;
             color: #e2e8f0;
@@ -885,7 +887,7 @@
             text-transform: none;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
-        
+
         .cta-phone {
             display: inline-flex;
             align-items: center;
@@ -901,19 +903,19 @@
             transition: all 0.3s;
             box-shadow: 0 15px 40px rgba(234, 88, 12, 0.3);
         }
-        
+
         .cta-phone:hover {
             transform: scale(1.05);
             box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4);
         }
-        
+
         .social-links-cta {
             display: flex;
             gap: 20px;
             justify-content: center;
             margin-top: 30px;
         }
-        
+
         .social-links-cta a {
             display: inline-flex;
             align-items: center;
@@ -928,20 +930,20 @@
             color: white;
             transition: all 0.3s;
         }
-        
+
         .social-links-cta .tg-link {
             background: #0088cc;
         }
-        
+
         .social-links-cta .vk-link {
             background: #4a76a8;
         }
-        
+
         .social-links-cta a:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
-        
+
         /* Footer */
         footer {
             background: rgba(15, 23, 42, 0.8);
@@ -951,7 +953,7 @@
             padding: 60px 0 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -960,18 +962,18 @@
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 60px;
         }
-        
+
         .footer-brand {
             max-width: 300px;
         }
-        
+
         .footer-logo {
             display: flex;
             align-items: center;
             gap: 12px;
             margin-bottom: 20px;
         }
-        
+
         .footer-logo img {
             height: 55px;
             width: 55px;
@@ -979,12 +981,12 @@
             object-fit: cover;
             flex-shrink: 0;
         }
-        
+
         .footer-logo-text {
             display: flex;
             flex-direction: column;
         }
-        
+
         .footer-logo-text div:first-child {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
@@ -992,20 +994,20 @@
             color: white;
             letter-spacing: 2px;
         }
-        
+
         .footer-logo-text div:last-child {
             font-family: 'PT Sans', sans-serif;
             font-size: 0.75rem;
             color: var(--gray);
         }
-        
+
         .footer-brand p {
             font-family: 'PT Sans', sans-serif;
             line-height: 1.8;
             font-size: 0.95rem;
             text-transform: none;
         }
-        
+
         .footer-column h4 {
             font-family: 'Poppins', sans-serif;
             color: var(--white);
@@ -1015,15 +1017,15 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         .footer-links {
             list-style: none;
         }
-        
+
         .footer-links li {
             margin-bottom: 12px;
         }
-        
+
         .footer-links a {
             font-family: 'PT Sans', sans-serif;
             color: var(--gray);
@@ -1032,17 +1034,17 @@
             font-size: 0.95rem;
             text-transform: none;
         }
-        
+
         .footer-links a:hover {
             color: var(--sky-blue);
         }
-        
+
         .social-footer {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         .social-footer a {
             width: 40px;
             height: 40px;
@@ -1054,21 +1056,21 @@
             font-size: 1.2rem;
             transition: all 0.3s;
         }
-        
+
         .social-footer .tg-footer {
             background: #0088cc;
             color: white;
         }
-        
+
         .social-footer .vk-footer {
             background: #4a76a8;
             color: white;
         }
-        
+
         .social-footer a:hover {
             transform: scale(1.1);
         }
-        
+
         .footer-bottom {
             max-width: 1200px;
             margin: 50px auto 0;
@@ -1079,20 +1081,10 @@
             font-size: 0.9rem;
             text-transform: none;
         }
-        
+
         /* Mobile Menu */
         /* Mobile menu button styles moved to media query below */
 
-        .mobile-only {
-            display: none;
-        }
-
-        .mobile-phone-link {
-            color: var(--sky-blue) !important;
-            font-size: 1.1rem !important;
-            font-weight: 700;
-        }
-        
         /* ========== MOBILE ADAPTATION ========== */
         @media (max-width: 1200px) {
             .nav-container {
@@ -1108,79 +1100,77 @@
             .hero-content h1 {
                 font-size: 2.8rem;
             }
-            
+
             .services-grid,
             .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .process-steps {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .process-step:not(:last-child)::after {
                 display: none;
             }
-            
+
             .about-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            
+
             .footer-container {
                 grid-template-columns: 1fr 1fr;
             }
         }
-        
+
         @media (max-width: 768px) {
-            /* nav-links styles moved to enhanced mobile menu block */
-            
-            
-            
+
+
             .phone-btn {
                 display: none;
             }
-            
+
             .logo img {
                 height: 50px;
                 width: 50px;
             }
-            
+
             .logo-main {
                 font-size: 1.3rem;
             }
-            
+
             .logo-sub {
                 font-size: 0.6rem;
             }
-            
+
             .hero {
                 min-height: auto;
                 padding-top: 80px;
             }
-            
+
             .hero-container {
                 padding: 60px 15px;
             }
-            
+
             .hero-content h1 {
                 font-size: 2.2rem;
                 line-height: 1.2;
                 margin-bottom: 20px;
             }
-            
+
             .hero-subtitle {
                 font-size: 1rem;
                 margin-bottom: 25px;
             }
-            
+
             .hero-features {
                 flex-direction: column;
                 gap: 15px;
                 margin-bottom: 30px;
                 align-items: center;
             }
-            
+
             .hero-feature {
                 font-size: 0.9rem;
                 justify-content: flex-start !important;
@@ -1189,19 +1179,19 @@
                 padding: 14px 16px;
                 width: 100%;
             }
-            
+
             .hero-feature-icon {
                 width: 36px;
                 height: 36px;
                 font-size: 1rem;
             }
-            
+
             .hero-buttons {
                 flex-direction: column;
                 gap: 15px;
                 width: 100%;
             }
-            
+
             .btn-primary,
             .btn-secondary {
                 width: 100%;
@@ -1209,17 +1199,17 @@
                 padding: 20px 30px;
                 font-size: 1.1rem;
             }
-            
+
             /* Stats mobile */
             .stats-container {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
             }
-            
+
             .stat-number {
                 font-size: 2.2rem;
             }
-            
+
             /* Services mobile */
             .services-grid {
                 grid-template-columns: 1fr 1fr;
@@ -1249,11 +1239,11 @@
                 font-size: 0.8rem;
                 line-height: 1.5;
             }
-            
+
             .section-title {
                 font-size: 2.2rem;
             }
-            
+
             /* About mobile */
             .about-visual {
                 aspect-ratio: 9 / 16;
@@ -1265,7 +1255,7 @@
                 object-fit: cover;
                 object-position: center;
             }
-            
+
             .about-content h2 {
                 font-size: 2.2rem;
                 text-align: center;
@@ -1282,7 +1272,7 @@
             .about-feature {
                 justify-content: center;
             }
-            
+
             .about-features {
                 grid-template-columns: 1fr;
                 gap: 15px;
@@ -1319,62 +1309,62 @@
             .about-feature-text {
                 text-align: left;
             }
-            
+
             /* Process mobile */
             .process-steps {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            
+
             .step-number {
                 width: 60px;
                 height: 60px;
                 font-size: 1.8rem;
             }
-            
+
             /* Projects mobile */
             .projects-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             /* CTA mobile */
             .cta h2 {
                 font-size: 2.2rem;
             }
-            
+
             .cta-phone {
                 font-size: 1.4rem;
                 padding: 18px 30px;
                 width: 100%;
                 justify-content: center;
             }
-            
+
             .social-links-cta {
                 flex-direction: column;
                 gap: 15px;
             }
-            
+
             .social-links-cta a {
                 width: 100%;
                 justify-content: center;
             }
-            
+
             /* Footer mobile */
             .footer-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            
+
             .footer-brand {
                 max-width: 100%;
             }
-            
+
             .footer-logo img {
                 height: 48px;
                 width: 48px;
             }
         }
-        
+
         /* ===== GRADIENT DIVIDERS ===== */
         .section-divider {
             height: 2px;
@@ -1384,7 +1374,7 @@
             max-width: 800px;
         }
 
-        
+
         /* ===== MOBILE MENU ENHANCED ===== */
         @media (max-width: 768px) {
             .nav-links {
@@ -1551,9 +1541,6 @@
                 padding: 60px 0;
             }
 
-            .stats-bar {
-                padding: 30px 0;
-            }
         }
 
         @media (max-width: 480px) {
@@ -1566,63 +1553,60 @@
                 padding: 40px 0;
             }
 
-            .stats-bar {
-                padding: 25px 0;
-            }
         }
         @media (max-width: 480px) {
             .hero-content h1 {
                 font-size: 1.8rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 0.95rem;
             }
-            
+
             .logo img {
                 height: 45px;
                 width: 45px;
             }
-            
+
             .logo-main {
                 font-size: 1.1rem;
             }
-            
+
             .logo-sub {
                 font-size: 0.55rem;
             }
-            
+
             .stat-number {
                 font-size: 1.8rem;
             }
-            
+
             .stat-label {
                 font-size: 0.85rem;
             }
-            
+
             .section-title {
                 font-size: 1.8rem;
             }
-            
+
             .service-card {
                 padding: 30px 20px;
             }
-            
+
             .service-icon {
                 width: 60px;
                 height: 60px;
                 font-size: 1.5rem;
             }
-            
+
             .cta h2 {
                 font-size: 1.8rem;
             }
-            
+
             .cta-phone {
                 font-size: 1.2rem;
             }
         }
-        
+
         
         /* ===== COST CALCULATOR ===== */
         .calculator {
@@ -1935,10 +1919,7 @@
             }
         }
 
-        
-        
 
-        
         /* ===== CONTACT FORM ===== */
         .contact-form-section {
             padding: 100px 0;
@@ -2201,11 +2182,7 @@
             }
         }
 
-        
 
-            .stats-bar {
-                padding: 30px 0;
-            }
         }
 
         @media (max-width: 480px) {
@@ -2218,9 +2195,6 @@
                 padding: 40px 0;
             }
 
-            .stats-bar {
-                padding: 25px 0;
-            }
         }
         @media (max-width: 480px) {
             .strip-item {
@@ -2468,11 +2442,7 @@
             }
         }
 
-        
 
-            .stats-bar {
-                padding: 30px 0;
-            }
         }
 
         @media (max-width: 480px) {
@@ -2485,9 +2455,6 @@
                 padding: 40px 0;
             }
 
-            .stats-bar {
-                padding: 25px 0;
-            }
         }
         @media (max-width: 480px) {
             .faq-question {
@@ -2502,56 +2469,11 @@
         }
 
         /* ===== SCROLL ANIMATIONS ===== */
-        .,
-        .,
-        .,
-        .,
-        . {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+
+
         }
 
-        
 
-        . {
-            transform: translateX(-40px);
-        }
-
-        . {
-            transform: translateX(40px);
-        }
-
-        . {
-            transform: scale(0.9);
-        }
-
-        . {
-            transform: rotate(-5deg) scale(0.95);
-        }
-
-        ..visible,
-        ..visible,
-        ..visible,
-        ..visible,
-        ..visible {
-            opacity: 1;
-            transform: translateY(0) translateX(0) scale(1) rotate(0);
-        }
-
-        
-
-        . { transition-delay: 0.1s; }
-        . { transition-delay: 0.2s; }
-        . { transition-delay: 0.3s; }
-        . { transition-delay: 0.4s; }
-
-        
-    
-        
-        }
-
-    
         /* Swipe hint for mobile */
         .swipe-hint {
             display: none;
@@ -2583,7 +2505,7 @@
             }
         }
 
-    
+
         /* ===== BACK TO TOP BUTTON ===== */
         .back-to-top {
             position: fixed;
@@ -2629,17 +2551,10 @@
             }
         }
 
-    
+
         /* ===== MOBILE PERFORMANCE ===== */
         @media (max-width: 768px) {
             /* Reduce animation complexity on mobile */
-            .,
-            .,
-            .,
-            .,
-            . {
-                transition-duration: 0.4s;
-            }
 
             /* Simplify hover effects on touch devices */
             .service-card:hover,
@@ -2660,7 +2575,7 @@
             }
         }
 
-    
+
         /* ===== MODAL WINDOWS ===== */
         .modal-overlay {
             position: fixed;
@@ -2853,7 +2768,7 @@
             }
         }
 
-    
+
         /* ===== SCROLL REVEAL ANIMATIONS ===== */
         .reveal {
             opacity: 0;
@@ -2927,8 +2842,7 @@
     </style>
 </head>
 <body>
-    <div class="scroll-progress" id="scrollProgress"></div>
-    <!-- ФОНОВОЕ ВИДЕО НА ВЕСЬ САЙТ -->
+        <!-- ФОНОВОЕ ВИДЕО НА ВЕСЬ САЙТ -->
     <div class="site-video-bg">
         <video autoplay muted loop playsinline poster="https://i.postimg.cc/pVcBVWYn/P-20260518-030035-0000.png">
             <source src="https://raw.githubusercontent.com/nastyagladiolus-cmyk/permprompol-video/796de83b004055a241f97e5a80555bb4b0776e8c/lv_0_20260518153819%5B1%5D.mp4" type="video/mp4">
@@ -2959,10 +2873,9 @@
                 <li><a href="#calculator" onclick="closeMobileMenu()">Калькулятор</a></li>
                 <li><a href="#faq" onclick="closeMobileMenu()">Вопрос/Ответ</a></li>
                 <li><a href="#contacts" onclick="closeMobileMenu()">Контакты</a></li>
-                <li class="mobile-only"><a href="#contact-form" class="mobile-phone-link" onclick="event.preventDefault(); document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'});"><i class="fas fa-paper-plane"></i> Оставить заявку</a></li>
             </ul>
-            
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" id="mobileMenuBtn">
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" id="mobileMenuBtn" aria-label="Открыть меню" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -3179,47 +3092,47 @@
             </button>
             <div class="photo-strip" id="photoStrip">
                 <div class="strip-item">
-                    <img src="images/photo1.jpg" alt="Полированный бетон">
+                    <img src="images/photo1.jpg" alt="Полированный бетон" onerror="this.src='https://via.placeholder.com/340x260/3b82f6/ffffff?text=Фото+1'">
                     <div class="strip-caption">Печатный бетон — площадка под машино-место</div>
                 </div>
                 <div class="strip-item">
-                    <img src="images/photo2.jpg" alt="Печатный бетон">
+                    <img src="images/photo2.jpg" onerror="this.src='https://via.placeholder.com/340x260/3b82f6/ffffff?text=Фото+2'" alt="Печатный бетон">
                     <div class="strip-caption">Топпинговый пол — придомовой гараж</div>
                 </div>
                 <div class="strip-item">
-                    <img src="images/photo3.jpg" alt="Промышленный пол">
+                    <img src="images/photo3.jpg" onerror="this.src='https://via.placeholder.com/340x260/3b82f6/ffffff?text=Фото+3'" alt="Промышленный пол">
                     <div class="strip-caption">Печатный бетон — благоустройство</div>
                 </div>
                 <div class="strip-item">
-                    <img src="images/photo4.jpg" alt="Полированный бетон">
+                    <img src="images/photo4.jpg" onerror="this.src='https://via.placeholder.com/340x260/3b82f6/ffffff?text=Фото+4'" alt="Полированный бетон">
                     <div class="strip-caption">Промышленный пол</div>
                 </div>
                 <div class="strip-item">
-                    <img src="images/photo5.jpg" alt="Уличное бетонирование">
+                    <img src="images/photo5.jpg" onerror="this.src='https://via.placeholder.com/340x260/3b82f6/ffffff?text=Фото+5'" alt="Уличное бетонирование">
                     <div class="strip-caption">Полимерный пол с элементами краски</div>
                 </div>
                 <div class="strip-item">
-                    <img src="images/photo6.jpg" alt="Полированный бетон">
+                    <img src="images/photo6.jpg" onerror="this.src='https://via.placeholder.com/340x260/3b82f6/ffffff?text=Фото+6'" alt="Полированный бетон">
                     <div class="strip-caption">Промышленный пол — гараж</div>
                 </div>
                 <div class="strip-item">
-                    <img src="images/photo7.jpg" alt="Печатный бетон">
+                    <img src="images/photo7.jpg" onerror="this.src='https://via.placeholder.com/340x260/3b82f6/ffffff?text=Фото+7'" alt="Печатный бетон">
                     <div class="strip-caption">Топпинговый пол — защитный слой</div>
                 </div>
                 <div class="strip-item">
-                    <img src="images/photo8.jpg" alt="Печатный бетон">
+                    <img src="images/photo8.jpg" onerror="this.src='https://via.placeholder.com/340x260/3b82f6/ffffff?text=Фото+8'" alt="Печатный бетон">
                     <div class="strip-caption">Полимерный пол — коридор</div>
                 </div>
                 <div class="strip-item">
-                    <img src="images/photo9.jpg" alt="Промышленный пол">
+                    <img src="images/photo9.jpg" onerror="this.src='https://via.placeholder.com/340x260/3b82f6/ffffff?text=Фото+9'" alt="Промышленный пол">
                     <div class="strip-caption">Печатный бетон — двор</div>
                 </div>
                 <div class="strip-item">
-                    <img src="images/photo10.jpg" alt="Промышленный пол">
+                    <img src="images/photo10.jpg" onerror="this.src='https://via.placeholder.com/340x260/3b82f6/ffffff?text=Фото+10'" alt="Промышленный пол">
                     <div class="strip-caption">Печатный бетон — отмостка</div>
                 </div>
                 <div class="strip-item">
-                    <img src="images/photo11.jpg" alt="Печатный бетон">
+                    <img src="images/photo11.jpg" onerror="this.src='https://via.placeholder.com/340x260/3b82f6/ffffff?text=Фото+11'" alt="Печатный бетон">
                     <div class="strip-caption">Топпинговый пол — гараж</div>
                 </div>
             </div>
@@ -3403,11 +3316,11 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="form-name">Ваше имя</label>
-                        <input type="text" id="form-name" placeholder="Иван Иванов" required>
+                        <input type="text" id="form-name" placeholder="Иван Иванов" required autocomplete="name">
                     </div>
                     <div class="form-group">
                         <label for="form-phone">Телефон</label>
-                        <input type="tel" id="form-phone" placeholder="+7 (___) ___-__-__" required>
+                        <input type="tel" id="form-phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
                     </div>
                 </div>
                 <div class="form-row">
@@ -3439,11 +3352,7 @@
         </div>
     </section>
 
-
-
-    
-
-    <!-- Footer -->
+<!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
@@ -3503,17 +3412,17 @@
 
         // ===== MOBILE MENU =====
         function toggleMobileMenu() {
-            console.log('toggleMobileMenu called');
+
             const navLinks = document.getElementById('navLinks');
             const menuBtn = document.getElementById('mobileMenuBtn');
             const menuOverlay = document.getElementById('menuOverlay');
             const body = document.body;
 
             if (navLinks.classList.contains('active')) {
-                console.log('Menu is active, closing');
+
                 closeMobileMenu();
             } else {
-                console.log('Menu is inactive, opening');
+
                 navLinks.classList.add('active');
                 menuBtn.classList.add('active');
                 menuOverlay.classList.add('active');
@@ -3559,7 +3468,7 @@
             }
         });
 
-        
+
         // Back to Top Button
         const backToTopBtn = document.getElementById('backToTop');
 
@@ -3758,7 +3667,7 @@
             if (e.key === 'ArrowRight') changeLightbox(1);
         });
 
-        
+
         // ===== COST CALCULATOR =====
         function calculateCost() {
             const area = parseFloat(document.getElementById('calc-area').value) || 0;
@@ -3872,7 +3781,7 @@
             return Math.round(price).toLocaleString('ru-RU');
         }
 
-        
+
         // Contact Form Submission
         function submitForm(event) {
             event.preventDefault();
@@ -3909,30 +3818,12 @@
                     </div>
                 `;
             }, 1500);
-
-            // Uncomment for real Telegram integration:
-            // fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${text}`)
-            //     .then(response => response.json())
-            //     .then(data => {
-            //         document.getElementById('contactForm').innerHTML = `
-            //             <div class="form-success">
-            //                 <i class="fas fa-check-circle"></i>
-            //                 <h3>Заявка отправлена!</h3>
-            //                 <p>Наш инженер свяжется с вами в течение 2 часов.</p>
-            //             </div>
-            //         `;
-            //     })
-            //     .catch(error => {
-            //         submitBtn.disabled = false;
-            //         submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Отправить заявку';
-            //         alert('Ошибка отправки. Пожалуйста, позвоните нам: +7 (908) 270-18-48');
-            //     });
         }
 
         // Initialize on load
         initLightbox();
 
-        
+
         // ===== MODAL WINDOWS =====
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
@@ -4014,7 +3905,6 @@
         }
 
 
-        
         // ===== SCROLL REVEAL =====
         const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
 
@@ -4075,7 +3965,6 @@
         counters.forEach(counter => counterObserver.observe(counter));
 
 
-        
         // ===== SCROLL REVEAL ANIMATIONS =====
         function initScrollReveal() {
             const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
@@ -4097,7 +3986,6 @@
         }
 
 
-
         // ===== SCROLL PROGRESS BAR =====
         function initScrollProgress() {
             const progressBar = document.getElementById('scrollProgress');
@@ -4113,7 +4001,7 @@
 
         // Initialize all animations
         initScrollReveal();
-        
+
         initScrollProgress();
 
 
@@ -4132,7 +4020,7 @@
             // Toggle current item
             item.classList.toggle('active');
         }
-    
+
         
     </script>
 
@@ -4155,9 +4043,8 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-
-    <!-- Modal: Application Form -->
-    <div class="modal-overlay" id="modalApplication">
+<!-- Modal: Application Form -->
+    <div class="modal-overlay" id="modalApplication" role="dialog" aria-modal="true" aria-labelledby="modalAppTitle">
         <div class="modal-window">
             <button class="modal-close" onclick="closeModal('modalApplication')">
                 <i class="fas fa-times"></i>
@@ -4165,7 +4052,7 @@
             <div class="modal-promo-badge">
                 <i class="fas fa-gift"></i> Ответим за 15 минут
             </div>
-            <h3 class="modal-title">Оставить заявку</h3>
+            <h3 class="modal-title" id="modalAppTitle">Оставить заявку</h3>
             <p class="modal-subtitle">Заполните форму — наш инженер свяжется с вами и рассчитает стоимость</p>
             <form class="modal-form" onsubmit="submitModalForm(event)">
                 <div class="form-group">
@@ -4188,7 +4075,7 @@
     </div>
 
     <!-- Modal: Promo (shows once per session) -->
-    <div class="modal-overlay" id="modalPromo">
+    <div class="modal-overlay" id="modalPromo" role="dialog" aria-modal="true" aria-labelledby="modalPromoTitle">
         <div class="modal-window">
             <button class="modal-close" onclick="closeModal('modalPromo')">
                 <i class="fas fa-times"></i>
@@ -4196,7 +4083,7 @@
             <div class="modal-promo-badge">
                 <i class="fas fa-percentage"></i> Акция месяца
             </div>
-            <h3 class="modal-title">Скидка 10% на все работы</h3>
+            <h3 class="modal-title" id="modalPromoTitle">Скидка 10% на все работы</h3>
             <p class="modal-subtitle">Оставьте заявку до конца месяца и получите скидку 10% на устройство бетонного пола любой сложности</p>
             <div style="display: flex; gap: 15px; margin-top: 25px;">
                 <a href="#" class="btn-primary" style="flex: 1; justify-content: center;" onclick="event.preventDefault(); closeModal('modalPromo'); openModal('modalApplication');">
@@ -4210,7 +4097,7 @@
     </div>
 
     <!-- Modal: Exit Intent -->
-    <div class="modal-overlay exit-modal" id="modalExit">
+    <div class="modal-overlay exit-modal" id="modalExit" role="dialog" aria-modal="true" aria-labelledby="modalExitTitle">
         <div class="modal-window">
             <button class="modal-close" onclick="closeModal('modalExit')">
                 <i class="fas fa-times"></i>
@@ -4218,7 +4105,7 @@
             <div class="modal-promo-badge">
                 <i class="fas fa-clock"></i> Не уходите с пустыми руками
             </div>
-            <h3 class="modal-title">Подождите!</h3>
+            <h3 class="modal-title" id="modalExitTitle">Подождите!</h3>
             <p class="modal-subtitle">Получите бесплатный расчёт стоимости + смету на email. Это займёт 2 минуты.</p>
             <div class="exit-buttons">
                 <a href="#" class="btn-primary" onclick="event.preventDefault(); closeModal('modalExit'); openModal('modalApplication');">

@@ -1452,25 +1452,28 @@
                 display: flex;
                 position: relative;
                 z-index: 1001;
-                width: 44px;
-                height: 44px;
-                border-radius: 12px;
-                background: rgba(255, 255, 255, 0.1);
-                border: 1px solid rgba(255, 255, 255, 0.2);
+                width: 48px;
+                height: 48px;
+                border-radius: 14px;
+                background: linear-gradient(135deg, rgba(234, 88, 12, 0.8), rgba(249, 115, 22, 0.9));
+                border: 2px solid rgba(255, 255, 255, 0.3);
                 align-items: center;
                 justify-content: center;
                 transition: all 0.3s;
                 cursor: pointer;
+                box-shadow: 0 4px 15px rgba(234, 88, 12, 0.4), 0 0 20px rgba(249, 115, 22, 0.2);
             }
 
             .mobile-menu-btn:hover {
-                background: rgba(249, 115, 22, 0.3);
-                border-color: var(--orange);
+                background: linear-gradient(135deg, rgba(234, 88, 12, 1), rgba(249, 115, 22, 1));
+                transform: scale(1.05);
+                box-shadow: 0 6px 25px rgba(234, 88, 12, 0.6), 0 0 30px rgba(249, 115, 22, 0.3);
             }
 
             .mobile-menu-btn.active {
-                background: rgba(249, 115, 22, 0.3);
-                border-color: var(--orange);
+                background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(125, 211, 252, 0.9));
+                border-color: rgba(125, 211, 252, 0.5);
+                box-shadow: 0 4px 20px rgba(59, 130, 246, 0.5);
             }
 
             .hamburger-line {
@@ -2656,6 +2659,199 @@
             }
         }
 
+    
+        /* ===== MODAL WINDOWS ===== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-window {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: translateY(30px) scale(0.95);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-overlay.active .modal-window {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: var(--orange);
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .modal-subtitle {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 30px;
+            text-transform: none;
+        }
+
+        .modal-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .modal-form .form-group label {
+            display: block;
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .modal-form .form-group input,
+        .modal-form .form-group textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: var(--white);
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .modal-form .form-group input:focus,
+        .modal-form .form-group textarea:focus {
+            border-color: var(--orange);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+        }
+
+        .modal-form .form-group input::placeholder,
+        .modal-form .form-group textarea::placeholder {
+            color: var(--gray-dark);
+        }
+
+        .modal-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--orange-dark), var(--orange));
+            color: white;
+            padding: 16px 30px;
+            border-radius: 30px;
+            border: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .modal-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(234, 88, 12, 0.4);
+        }
+
+        /* Promo badge */
+        .modal-promo-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--orange-dark), var(--orange));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* Exit modal specific */
+        .exit-modal .modal-title {
+            font-size: 1.5rem;
+        }
+
+        .exit-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .exit-buttons .btn-primary,
+        .exit-buttons .btn-secondary {
+            flex: 1;
+            justify-content: center;
+            padding: 14px 20px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .modal-window {
+                padding: 30px 20px;
+                width: 95%;
+            }
+
+            .modal-title {
+                font-size: 1.4rem;
+            }
+
+            .exit-buttons {
+                flex-direction: column;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -3662,6 +3858,88 @@
         // Initialize on load
         initLightbox();
 
+        
+        // ===== MODAL WINDOWS =====
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close modal on overlay click
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) {
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Promo modal - show once per session after 5 seconds
+        setTimeout(() => {
+            if (!sessionStorage.getItem('promoShown')) {
+                openModal('modalPromo');
+                sessionStorage.setItem('promoShown', 'true');
+            }
+        }, 5000);
+
+        // Exit intent modal
+        let exitShown = false;
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 0 && !exitShown && !document.querySelector('.modal-overlay.active')) {
+                openModal('modalExit');
+                exitShown = true;
+            }
+        });
+
+        // Modal form submission
+        function submitModalForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('modal-name').value;
+            const phone = document.getElementById('modal-phone').value;
+            const message = document.getElementById('modal-message').value;
+
+            // Show success
+            const modalWindow = document.querySelector('#modalApplication .modal-window');
+            modalWindow.innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--orange); margin-bottom: 20px;"></i>
+                    <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.6rem; color: var(--white); margin-bottom: 15px;">Заявка отправлена!</h3>
+                    <p style="font-family: 'Roboto', sans-serif; color: var(--gray); font-size: 1rem;">Наш инженер свяжется с вами в течение 15 минут</p>
+                </div>
+            `;
+
+            setTimeout(() => {
+                closeModal('modalApplication');
+                // Reset form after closing
+                setTimeout(() => {
+                    location.reload();
+                }, 300);
+            }, 2500);
+        }
+
+
         // FAQ Toggle
         function toggleFaq(element) {
             const item = element.parentElement;
@@ -3699,6 +3977,82 @@
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+
+    <!-- Modal: Application Form -->
+    <div class="modal-overlay" id="modalApplication">
+        <div class="modal-window">
+            <button class="modal-close" onclick="closeModal('modalApplication')">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-promo-badge">
+                <i class="fas fa-gift"></i> Ответим за 15 минут
+            </div>
+            <h3 class="modal-title">Оставить заявку</h3>
+            <p class="modal-subtitle">Заполните форму — наш инженер свяжется с вами и рассчитает стоимость</p>
+            <form class="modal-form" onsubmit="submitModalForm(event)">
+                <div class="form-group">
+                    <label for="modal-name">Ваше имя</label>
+                    <input type="text" id="modal-name" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-phone">Телефон</label>
+                    <input type="tel" id="modal-phone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-message">Что нужно сделать?</label>
+                    <textarea id="modal-message" rows="3" placeholder="Например: бетонный пол 200 м² в склад"></textarea>
+                </div>
+                <button type="submit" class="modal-submit">
+                    <i class="fas fa-paper-plane"></i> Отправить заявку
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Promo (shows once per session) -->
+    <div class="modal-overlay" id="modalPromo">
+        <div class="modal-window">
+            <button class="modal-close" onclick="closeModal('modalPromo')">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-promo-badge">
+                <i class="fas fa-percentage"></i> Акция месяца
+            </div>
+            <h3 class="modal-title">Скидка 10% на все работы</h3>
+            <p class="modal-subtitle">Оставьте заявку до конца месяца и получите скидку 10% на устройство бетонного пола любой сложности</p>
+            <div style="display: flex; gap: 15px; margin-top: 25px;">
+                <a href="#" class="btn-primary" style="flex: 1; justify-content: center;" onclick="event.preventDefault(); closeModal('modalPromo'); openModal('modalApplication');">
+                    <i class="fas fa-paper-plane"></i> Получить скидку
+                </a>
+                <button class="btn-secondary" style="flex: 1; justify-content: center; border: 2px solid rgba(255,255,255,0.3);" onclick="closeModal('modalPromo')">
+                    Спасибо, позже
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Exit Intent -->
+    <div class="modal-overlay exit-modal" id="modalExit">
+        <div class="modal-window">
+            <button class="modal-close" onclick="closeModal('modalExit')">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-promo-badge">
+                <i class="fas fa-clock"></i> Не уходите с пустыми руками
+            </div>
+            <h3 class="modal-title">Подождите!</h3>
+            <p class="modal-subtitle">Получите бесплатный расчёт стоимости + смету на email. Это займёт 2 минуты.</p>
+            <div class="exit-buttons">
+                <a href="#" class="btn-primary" onclick="event.preventDefault(); closeModal('modalExit'); openModal('modalApplication');">
+                    <i class="fas fa-calculator"></i> Рассчитать
+                </a>
+                <button class="btn-secondary" onclick="closeModal('modalExit')">
+                    Уже ухожу
+                </button>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

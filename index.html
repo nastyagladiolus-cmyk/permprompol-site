@@ -1086,7 +1086,94 @@
         /* Mobile menu button styles moved to media query below */
 
         /* ========== MOBILE ADAPTATION ========== */
-        @media (max-width: 1200px) {
+        
+        /* ===== SERVICE DETAIL PANELS RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .service-detail-body {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .service-detail-content {
+                padding: 30px;
+            }
+            .service-detail-title {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .service-card {
+                padding: 20px 15px;
+                min-height: 150px;
+            }
+            .service-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+            }
+            .service-title {
+                font-size: clamp(0.8rem, 3.5vw, 0.95rem);
+            }
+            .service-card-hint {
+                font-size: 0.75rem;
+            }
+            .service-detail-content {
+                padding: 25px 20px;
+            }
+            .service-detail-header {
+                gap: 15px;
+            }
+            .service-detail-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+                border-radius: 14px;
+            }
+            .service-detail-title {
+                font-size: 1.2rem;
+            }
+            .service-detail-col h4 {
+                font-size: 1rem;
+            }
+            .service-detail-col p,
+            .service-detail-col ul li {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .service-card {
+                padding: 18px 15px;
+                min-height: auto;
+                flex-direction: row;
+                text-align: left;
+                gap: 15px;
+            }
+            .service-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+                margin-bottom: 0;
+                flex-shrink: 0;
+            }
+            .service-title {
+                margin-bottom: 4px;
+            }
+            .service-card-hint {
+                margin-top: 4px;
+            }
+        }
+
+@media (max-width: 1200px) {
             .nav-container {
                 padding: 0 30px;
             }
@@ -2994,70 +3081,248 @@
     <section class="services" id="services">
         <div class="section-header reveal">
             <span class="section-tag">Наши услуги</span>
-            <h2 class="section-title">Полный спектр работ по бетонным полам</h2>
-            <p class="section-desc">Выполняем все этапы — от проектирования до финишной отделки промышленных полов любой сложности</p>
+            <h2 class="section-title">Виды промышленных полов</h2>
+            <p class="section-desc">Выберите тип покрытия, чтобы узнать подробности: описание, плюсы и минусы, область применения</p>
         </div>
         <div class="services-grid">
-            <div class="service-card reveal reveal-delay-1">
+            <div class="service-card reveal reveal-delay-1" onclick="openServiceDetail('beton')">
                 <div class="service-icon">
-                    <i class="fas fa-industry"></i>
+                    <i class="fas fa-cube"></i>
                 </div>
-                <h3 class="service-title">Промышленные полы</h3>
-                <p class="service-desc">Устройство бетонных полов для заводов, цехов и производственных площадок с учётом нагрузок от оборудования и погрузчиков</p>
+                <h3 class="service-title">Бетонные полы</h3>
+                <span class="service-card-hint"><i class="fas fa-plus-circle"></i> Подробнее</span>
             </div>
-            <div class="service-card reveal reveal-delay-2">
+            <div class="service-card reveal reveal-delay-2" onclick="openServiceDetail('topping')">
                 <div class="service-icon">
-                    <i class="fas fa-warehouse"></i>
+                    <i class="fas fa-gem"></i>
                 </div>
-                <h3 class="service-title">Складские полы</h3>
-                <p class="service-desc">Бетонирование полов под высокие стеллажные нагрузки. Упрочнение топпингом и армирование волокном для долговечности</p>
+                <h3 class="service-title">Топпинговые</h3>
+                <span class="service-card-hint"><i class="fas fa-plus-circle"></i> Подробнее</span>
             </div>
-            <div class="service-card reveal reveal-delay-3">
-                <div class="service-icon">
-                    <i class="fas fa-car"></i>
-                </div>
-                <h3 class="service-title">Полы для СТО и паркингов</h3>
-                <p class="service-desc">Химически стойкие покрытия для автосервисов, моек и подземных паркингов с дренажными системами</p>
-            </div>
-            <div class="service-card reveal reveal-delay-4">
-                <div class="service-icon">
-                    <i class="fas fa-snowflake"></i>
-                </div>
-                <h3 class="service-title">Холодильные камеры</h3>
-                <p class="service-desc">Специальные бетонные полы с термоусадочными швами для морозильных складов и холодильных комплексов</p>
-            </div>
-            <div class="service-card reveal reveal-delay-5">
-                <div class="service-icon">
-                    <i class="fas fa-star"></i>
-                </div>
-                <h3 class="service-title">Топпинг и полировка</h3>
-                <p class="service-desc">Упрочнение поверхности кварцевым или металлическим топпингом. Полировка для получения зеркального блеска</p>
-            </div>
-            <div class="service-card reveal reveal-delay-6">
+            <div class="service-card reveal reveal-delay-3" onclick="openServiceDetail('polymer')">
                 <div class="service-icon">
                     <i class="fas fa-flask"></i>
                 </div>
-                <h3 class="service-title">Полимерные полы</h3>
-                <p class="service-desc">Наливные полимерные покрытия для помещений с повышенными требованиями к чистоте и химической стойкости</p>
+                <h3 class="service-title">Полимерные</h3>
+                <span class="service-card-hint"><i class="fas fa-plus-circle"></i> Подробнее</span>
             </div>
-            <div class="service-card reveal reveal-delay-1">
+            <div class="service-card reveal reveal-delay-4" onclick="openServiceDetail('stamped')">
                 <div class="service-icon">
-                    <i class="fas fa-paint-roller"></i>
+                    <i class="fas fa-stamp"></i>
                 </div>
-                <h3 class="service-title">Печатный бетон</h3>
-                <p class="service-desc">Декоративный бетон с текстурой камня, кирпича или дерева. Идеален для ландшафтного дизайна и тротуаров</p>
+                <h3 class="service-title">Печатный</h3>
+                <span class="service-card-hint"><i class="fas fa-plus-circle"></i> Подробнее</span>
             </div>
-            <div class="service-card reveal reveal-delay-2">
+            <div class="service-card reveal reveal-delay-5" onclick="openServiceDetail('armored')">
                 <div class="service-icon">
-                    <i class="fas fa-home"></i>
+                    <i class="fas fa-shield-alt"></i>
                 </div>
-                <h3 class="service-title">Придомовая территория</h3>
-                <p class="service-desc">Отмостки, дорожки, площадки и благоустройство придомовых территорий частных домов и многоквартирных домов</p>
+                <h3 class="service-title">Бронированный</h3>
+                <span class="service-card-hint"><i class="fas fa-plus-circle"></i> Подробнее</span>
             </div>
         </div>
-    </section>
 
-    <!-- About Section с ВИДЕО -->
+        <!-- Service Detail Panels -->
+        <div class="service-detail-panel" id="detail-beton">
+            <div class="service-detail-content">
+                <button class="service-detail-close" onclick="closeServiceDetail('beton')">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="service-detail-header">
+                    <div class="service-detail-icon"><i class="fas fa-cube"></i></div>
+                    <h3 class="service-detail-title">Бетонные полы</h3>
+                </div>
+                <div class="service-detail-body">
+                    <div class="service-detail-col">
+                        <h4><i class="fas fa-info-circle"></i> Описание</h4>
+                        <p>Классическое промышленное покрытие из монолитного бетона. Используется как основа для дальнейшей отделки или как самостоятельное покрытие. Толщина от 100 до 200 мм, армирование металлической сеткой или фиброволокном.</p>
+                        <h4 style="margin-top: 20px;"><i class="fas fa-plus-circle"></i> Плюсы</h4>
+                        <ul>
+                            <li>Высокая прочность и долговечность</li>
+                            <li>Устойчивость к механическим нагрузкам</li>
+                            <li>Низкая стоимость материалов</li>
+                            <li>Простота ремонта</li>
+                            <li>Огнестойкость</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-col">
+                        <h4><i class="fas fa-minus-circle"></i> Минусы</h4>
+                        <ul class="minus">
+                            <li>Трещинообразование при усадке</li>
+                            <li>Низкая химическая стойкость без доп. покрытия</li>
+                            <li>Пылеобразование при эксплуатации</li>
+                            <li>Длительный срок набора прочности (28 дней)</li>
+                            <li>Необходимость нарезки деформационных швов</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-detail-suitable">
+                    <h4><i class="fas fa-building"></i> Для чего подходит</h4>
+                    <p>Склады, производственные цеха, ангары, гаражи, подвальные помещения, придомовые территории. Рекомендуется как базовое покрытие с последующим нанесением топпинга или полимерного слоя.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-detail-panel" id="detail-topping">
+            <div class="service-detail-content">
+                <button class="service-detail-close" onclick="closeServiceDetail('topping')">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="service-detail-header">
+                    <div class="service-detail-icon"><i class="fas fa-gem"></i></div>
+                    <h3 class="service-detail-title">Топпинговые полы</h3>
+                </div>
+                <div class="service-detail-body">
+                    <div class="service-detail-col">
+                        <h4><i class="fas fa-info-circle"></i> Описание</h4>
+                        <p>Бетонный пол с упрочняющим верхним слоем из кварцевого или металлического топпинга. Наносится на свежий бетон методом «сухого посыпа». Толщина упрочняющего слоя 2–5 мм. Поверхность шлифуется и полируется.</p>
+                        <h4 style="margin-top: 20px;"><i class="fas fa-plus-circle"></i> Плюсы</h4>
+                        <ul>
+                            <li>Повышенная износостойкость (в 3–5 раз)</li>
+                            <li>Отсутствие пыли при эксплуатации</li>
+                            <li>Устойчивость к ударным нагрузкам</li>
+                            <li>Эстетичный внешний вид</li>
+                            <li>Долгий срок службы (20+ лет)</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-col">
+                        <h4><i class="fas fa-minus-circle"></i> Минусы</h4>
+                        <ul class="minus">
+                            <li>Более высокая стоимость по сравнению с обычным бетоном</li>
+                            <li>Требует квалифицированной укладки</li>
+                            <li>Ограниченная цветовая гамма</li>
+                            <li>Не подходит для агрессивных химических сред</li>
+                            <li>Невозможность локального ремонта без следов</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-detail-suitable">
+                    <h4><i class="fas fa-building"></i> Для чего подходит</h4>
+                    <p>Склады с высокими стеллажными нагрузками, производственные цеха с интенсивным движением погрузчиков, торговые центры, автосервисы, паркинги. Идеально для помещений с высокими механическими нагрузками.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-detail-panel" id="detail-polymer">
+            <div class="service-detail-content">
+                <button class="service-detail-close" onclick="closeServiceDetail('polymer')">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="service-detail-header">
+                    <div class="service-detail-icon"><i class="fas fa-flask"></i></div>
+                    <h3 class="service-detail-title">Полимерные полы</h3>
+                </div>
+                <div class="service-detail-body">
+                    <div class="service-detail-col">
+                        <h4><i class="fas fa-info-circle"></i> Описание</h4>
+                        <p>Наливные покрытия на основе эпоксидных, полиуретановых или метакрилатных смол. Наносятся слоями толщиной 1–5 мм на подготовленное бетонное основание. Создают бесшовное, гладкое, химически стойкое покрытие.</p>
+                        <h4 style="margin-top: 20px;"><i class="fas fa-plus-circle"></i> Плюсы</h4>
+                        <ul>
+                            <li>Абсолютная химическая стойкость</li>
+                            <li>Гигиеничность (бесшовное покрытие)</li>
+                            <li>Широкая цветовая палитра</li>
+                            <li>Антискользящие свойства (при добавлении кварцевого песка)</li>
+                            <li>Быстрый ввод в эксплуатацию (24–72 часа)</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-col">
+                        <h4><i class="fas fa-minus-circle"></i> Минусы</h4>
+                        <ul class="minus">
+                            <li>Высокая стоимость материалов и работ</li>
+                            <li>Чувствительность к температуре укладки</li>
+                            <li>Требует идеально подготовленного основания</li>
+                            <li>Желтение эпоксидных покрытий на солнце</li>
+                            <li>Сложный ремонт при повреждении</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-detail-suitable">
+                    <h4><i class="fas fa-building"></i> Для чего подходит</h4>
+                    <p>Пищевые производства, фармацевтические заводы, химические лаборатории, автомойки, медицинские учреждения, электронные производства. Необходимы там, где важна химическая стойкость и гигиеничность.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-detail-panel" id="detail-stamped">
+            <div class="service-detail-content">
+                <button class="service-detail-close" onclick="closeServiceDetail('stamped')">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="service-detail-header">
+                    <div class="service-detail-icon"><i class="fas fa-stamp"></i></div>
+                    <h3 class="service-detail-title">Печатный бетон</h3>
+                </div>
+                <div class="service-detail-body">
+                    <div class="service-detail-col">
+                        <h4><i class="fas fa-info-circle"></i> Описание</h4>
+                        <p>Декоративная технология, при которой на свежий бетон наносится цветной отвердитель, а затем штампуется текстура (камень, кирпич, дерево, плитка). Поверхность покрывается защитным лаком. Толщина покрытия 100–150 мм.</p>
+                        <h4 style="margin-top: 20px;"><i class="fas fa-plus-circle"></i> Плюсы</h4>
+                        <ul>
+                            <li>Уникальный эстетический вид</li>
+                            <li>Широкий выбор текстур и цветов</li>
+                            <li>Долговечность (сравнима с обычным бетоном)</li>
+                            <li>Низкая стоимость по сравнению с натуральным камнем</li>
+                            <li>Не скользит при дожде (шероховатая поверхность)</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-col">
+                        <h4><i class="fas fa-minus-circle"></i> Минусы</h4>
+                        <ul class="minus">
+                            <li>Требует периодической реставрации лака (каждые 2–3 года)</li>
+                            <li>Сложность укладки — нужны опытные мастера</li>
+                            <li>Не подходит для закрытых помещений с высокими нагрузками</li>
+                            <li>Цвет может выцветать на солнце без защиты</li>
+                            <li>Трудоёмкость подготовки и укладки</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-detail-suitable">
+                    <h4><i class="fas fa-building"></i> Для чего подходит</h4>
+                    <p>Ландшафтный дизайн, тротуары, патио, бассейны, подъездные пути, площадки для отдыха, входные группы. Идеально для наружных работ, где важен внешний вид и долговечность.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-detail-panel" id="detail-armored">
+            <div class="service-detail-content">
+                <button class="service-detail-close" onclick="closeServiceDetail('armored')">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="service-detail-header">
+                    <div class="service-detail-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="service-detail-title">Бронированные полы</h3>
+                </div>
+                <div class="service-detail-body">
+                    <div class="service-detail-col">
+                        <h4><i class="fas fa-info-circle"></i> Описание</h4>
+                        <p>Усиленный вариант бетонного пола с применением стальной фибры, композитной арматуры и специальных добавок. Поверхность обрабатывается алмазным шлифованием. Толщина от 150 до 250 мм. Предназначен для экстремальных нагрузок.</p>
+                        <h4 style="margin-top: 20px;"><i class="fas fa-plus-circle"></i> Плюсы</h4>
+                        <ul>
+                            <li>Максимальная прочность и износостойкость</li>
+                            <li>Устойчивость к ударным и динамическим нагрузкам</li>
+                            <li>Отсутствие усадочных трещин благодаря фибре</li>
+                            <li>Длительный срок службы (30+ лет)</li>
+                            <li>Минимальное обслуживание</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-col">
+                        <h4><i class="fas fa-minus-circle"></i> Минусы</h4>
+                        <ul class="minus">
+                            <li>Самая высокая стоимость среди всех типов</li>
+                            <li>Длительные сроки укладки</li>
+                            <li>Требует специализированного оборудования</li>
+                            <li>Большой вес конструкции</li>
+                            <li>Сложность демонтажа при необходимости</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-detail-suitable">
+                    <h4><i class="fas fa-building"></i> Для чего подходит</h4>
+                    <p>Аэродромы, мосты, тяжёлые производства, склады с многоэтажным стеллажным хранением, цеха с тяжёлым оборудованием, портовые терминалы. Необходим там, где стандартные полы не выдерживают нагрузки.</p>
+                </div>
+            </div>
+        </div>
+    </section><!-- About Section с ВИДЕО -->
     <section class="about" id="about">
         <div class="about-container">
             <div class="about-visual reveal reveal-left">
@@ -3074,9 +3339,9 @@
                 <div class="about-features">
                     <div class="about-feature">
                         <div class="about-feature-icon">
-                            <i class="fas fa-clipboard-list"></i>
+                            <i class="fas fa-file-invoice-dollar"></i>
                         </div>
-                        <span class="about-feature-text">Проектирование и смета</span>
+                        <span class="about-feature-text">Смета</span>
                     </div>
                     <div class="about-feature">
                         <div class="about-feature-icon">
@@ -3086,9 +3351,9 @@
                     </div>
                     <div class="about-feature">
                         <div class="about-feature-icon">
-                            <i class="fas fa-file-invoice-dollar"></i>
+                            <i class="fas fa-shield-alt"></i>
                         </div>
-                        <span class="about-feature-text">Работаем с НДС и без</span>
+                        <span class="about-feature-text">Гарантия до 5 лет</span>
                     </div>
                     <div class="about-feature">
                         <div class="about-feature-icon">
@@ -4056,7 +4321,37 @@
         }
 
         
-    </script>
+    
+        // ===== SERVICE DETAIL PANELS =====
+        function openServiceDetail(type) {
+            // Close all other panels first
+            document.querySelectorAll('.service-detail-panel.active').forEach(panel => {
+                panel.classList.remove('active');
+            });
+
+            const panel = document.getElementById('detail-' + type);
+            if (panel) {
+                panel.classList.add('active');
+                panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        function closeServiceDetail(type) {
+            const panel = document.getElementById('detail-' + type);
+            if (panel) {
+                panel.classList.remove('active');
+            }
+        }
+
+        // Close detail panels when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.service-detail-panel') && !e.target.closest('.service-card')) {
+                document.querySelectorAll('.service-detail-panel.active').forEach(panel => {
+                    panel.classList.remove('active');
+                });
+            }
+        });
+</script>
 
     <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
